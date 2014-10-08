@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+  <string name="app_name">Configure MK8</string>
+
+  <!-- Main tab titles -->
+  <string name="adjust">Adjust</string>
+  <string name="configure">Configure</string>
+  <string name="compare">Compare</string>
+  <string name="maps">Maps</string>
+  <string name="faq">F.A.Q.</string>
+
+  <!-- Compare -->
+  <string name="compare_help_message">In order to use the compare feature, you must have
+    saved/starred at least 2 configurations.</string>
+
+  <!-- F.A.Q. -->
+  <string name="rate">RATE</string>
+  <string name="donate">DONATE</string>
+  <string name="donation_message_top">Like this app? \r\n Support it by sending a donation.</string>
+  <string name="via_google_play">via Google Play:</string>
+  <string name="or_via_bitcoin">or via Bitcoin:</string>
+  <string name="thank_you">Thank you!</string>
+  <string name="bitcoin_address_copied">Bitcoin address copied to clipboard.</string>
+  <string name="cannot_rate_app">No app found that can handle app rating intent.</string>
+
+  <!-- Attributes -->
+  <string name="acceleration">Acceleration</string>
+  <string name="average_speed">Average Speed</string>
+  <string name="ground_speed">Ground Speed</string>
+  <string name="antigravity_speed">Antigravity Speed</string>
+  <string name="air_speed">Air Speed</string>
+  <string name="water_speed">Water Speed</string>
+  <string name="average_handling">Average Handling</string>
+  <string name="ground_handling">Ground Handling</string>
+  <string name="antigravity_handling">Antigravity Handling</string>
+  <string name="air_handling">Air Handling</string>
+  <string name="water_handling">Water Handling</string>
+  <string name="miniturbo">Miniturbo</string>
+  <string name="traction">Traction</string>
+  <string name="weight">Weight</string>
+
+  <!-- Part Types -->
+  <string name="character">Character</string>
+  <string name="vehicle">Vehicle</string>
+  <string name="tire">Tire</string>
+  <string name="glider">Glider</string>
+
+  <!-- Character Groups -->
+  <string name="flyweight">Flyweight</string>
+  <string name="featherweight">Featherweight</string>
+  <string name="lightweight">Lightweight</string>
+  <string name="middleweight">Middleweight</string>
+  <string name="cruiserweight">Cruiserweight</string>
+  <string name="metalweight">Metalweight</string>
+  <string name="heavyweight">Heavyweight</string>
+
+  <!-- Characters -->
+
+  <!-- Flyweights -->
+  <string name="baby_mario">Baby Mario</string>
+  <string name="baby_luigi">Baby Luigi</string>
+  <string name="baby_peach">Baby Peach</string>
+  <string name="baby_daisy">Baby Daisy</string>
+  <string name="baby_rosalina">Baby Rosalina</string>
+  <string name="lemmy">Lemmy</string>
+
+  <!-- Featherweights -->
+  <string name="toad">Toad</string>
+  <string name="koopa_troopa">Koopa Troopa</string>
+  <string name="shy_guy">Shy Guy</string>
+  <string name="lakitu">Lakitu</string>
+  <string name="toadette">Toadette</string>
+  <string name="larry">Larry</string>
+  <string name="wendy">Wendy</string>
+
+  <!-- Lightweights -->
+  <string name="peach">Peach</string>
+  <string name="daisy">Daisy</string>
+  <string name="yoshi">Yoshi</string>
+
+  <!-- Middleweights -->
+  <string name="mario">Mario</string>
+  <string name="luigi">Luigi</string>
+  <string name="iggy">Iggy</string>
+  <string name="ludwig">Ludwig</string>
+
+  <!-- Cruiserweights -->
+  <string name="donkey_kong">Donkey Kong</string>
+  <string name="waluigi">Waluigi</string>
+  <string name="rosalina">Rosalina</string>
+  <string name="roy">Roy</string>
+
+  <!-- Metalweights -->
+  <string name="metal_mario">Metal Mario</string>
+  <string name="pink_gold_peach">Pink Gold Peach</string>
+
+  <!-- Heavyweights -->
+  <string name="bowser">Bowser</string>
+  <string name="wario">Wario</string>
+  <string name="morton">Morton</string>
+
+  <!-- Vehicle Groups -->
+  <string name="vehicle_a">Vehicle A</string>
+  <string name="vehicle_b">Vehicle B</string>
+  <string name="vehicle_c">Vehicle C</string>
+  <string name="vehicle_d">Vehicle D</string>
+  <string name="vehicle_e">Vehicle E</string>
+  <string name="vehicle_f">Vehicle F</string>
+
+  <!-- Tire Groups -->
+  <string name="tire_a">Tire A</string>
+  <string name="tire_b">Tire B</string>
+  <string name="tire_c">Tire C</string>
+  <string name="tire_d">Tire D</string>
+  <string name="tire_e">Tire E</string>
+  <string name="tire_f">Tire F</string>
+  <string name="tire_g">Tire G</string>
+
+  <!-- Glider Groups -->
+  <string name="glider_a">Glider A</string>
+  <string name="glider_b">Glider B</string>
+
+  <!-- Cups -->
+  <string name="mushroom_cup">Mushroom Cup</string>
+  <string name="flower_cup">Flower Cup</string>
+  <string name="star_cup">Star Cup</string>
+  <string name="special_cup">Special Cup</string>
+  <string name="shell_cup">Shell Cup</string>
+  <string name="banana_cup">Banana Cup</string>
+  <string name="leaf_cup">Leaf Cup</string>
+  <string name="lightning_cup">Lightning Cup</string>
+
+  <!-- Courses -->
+
+  <!-- Mushroom Cup -->
+  <string name="mario_kart_stadium">Mario Kart Stadium</string>
+  <string name="water_park">Water Park</string>
+  <string name="sweet_sweet_canyon">Sweet Sweet Canyon</string>
+  <string name="thwomp_ruins">Thwomp Ruins</string>
+
+  <!-- Flower Cup -->
+  <string name="mario_circuit">Mario Circuit</string>
+  <string name="toad_harbor">Toad Harbor</string>
+  <string name="twisted_mansion">Twisted Mansion</string>
+  <string name="shy_guy_falls">Shy Guy Falls</string>
+
+  <!-- Star Cup -->
+  <string name="sunshine_airport">Sunshine Airport</string>
+  <string name="dolphin_shoals">Dolphin Shoals</string>
+  <string name="electrodrome">Electrodrome</string>
+  <string name="mount_wario">Mount Wario</string>
+
+  <!-- Special Cup -->
+  <string name="cloudtop_cruise">Cloudtop Cruise</string>
+  <string name="bone_dry_dunes">Bone-Dry Dunes</string>
+  <string name="bowsers_castle">Bowser\'s Castle</string>
+  <string name="rainbow_road">Rainbow Road</string>
+
+  <!-- Shell Cup -->
+  <string name="moo_moo_meadows">Moo Moo Meadows</string>
+  <string name="mario_circuit_gba">Mario Circuit (GBA)</string>
+  <string name="cheep_cheep_beach">Cheep Cheep Beach</string>
+  <string name="toads_turnpike">Toad\'s Turnpike</string>
+
+  <!-- Banana Cup -->
+  <string name="dry_dry_desert">Dry Dry Desert</string>
+  <string name="donut_plains_3">Donut Plains 3</string>
+  <string name="royal_raceway">Royal Raceway</string>
+  <string name="dk_jungle">DK Jungle</string>
+
+  <!-- Leaf Cup -->
+  <string name="wario_stadium">Wario Stadium</string>
+  <string name="sherbet_land">Sherbet Land</string>
+  <string name="music_park">Music Park</string>
+  <string name="yoshi_valley">Yoshi Valley</string>
+
+  <!-- Lightning Cup -->
+  <string name="tick_tock_clock">Tick-Tock Clock</string>
+  <string name="piranha_plant_slide">Piranha Plant Slide</string>
+  <string name="grumble_volcano">Grumble Volcano</string>
+  <string name="rainbow_road_n64">Rainbow Road (N64)</string>
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Configure MK8</string>
+
+  <!-- Main tab titles -->
+  <string name="adjust">Ajuster</string>
+  <string name="configure">Configuration</string>
+  <string name="compare">Comparer</string>
+  <string name="maps">Cartes</string>
+  <string name="faq">F.A.Q.</string>
+
+  <!-- Compare -->
+  <string name="compare_help_message">Pour comparer les caractéristiques, vous devez selectionner
+    au minimun deux 2 configurations.</string>
+
+  <!-- F.A.Q. -->
+  <string name="rate">Note</string>
+  <string name="donate">Donation</string>
+  <string name="donation_message_top">Vous aimez cette application? \r\n Aidez là en faisant une donation.</string>
+  <string name="via_google_play">via Google Play:</string>
+  <string name="or_via_bitcoin">ou via Bitcoin:</string>
+  <string name="thank_you">Merci!</string>
+  <string name="bitcoin_address_copied">Copier l\'addresse du Bitcoin.</string>
+  <string name="cannot_rate_app">Aucune application pour noter cette application.</string>
+
+  <!-- Attributes -->
+  <string name="acceleration">Accélération</string>
+  <string name="average_speed">Vitesse Moyenne</string>
+  <string name="ground_speed">Vitesse au Sol</string>
+  <string name="antigravity_speed">Vitesse Antigravité</string>
+  <string name="air_speed">Vitesse dans les Air</string>
+  <string name="water_speed">Vitesse dans l\'Eau</string>
+  <string name="average_handling">Contrôle Moyenne</string>
+  <string name="ground_handling">Contrôle au Sol</string>
+  <string name="antigravity_handling">Contrôle Antigravité</string>
+  <string name="air_handling">Contrôle Aérien</string>
+  <string name="water_handling">Contrôle Sous-marin</string>
+  <string name="miniturbo">Miniturbo</string>
+  <string name="traction">Traction</string>
+  <string name="weight">Poids</string>
+
+
+  <!-- Part Types -->
+  <string name="character">Personnage</string>
+  <string name="vehicle">Véhicule</string>
+  <string name="tire">Roues</string>
+  <string name="glider">Planneur</string>
+
+  <!-- Characters -->
+
+  <!-- Flyweights -->
+  <string name="baby_mario">Bébé Mario</string>
+  <string name="baby_luigi">Bébé Luigi</string>
+  <string name="baby_peach">Bébé Peach</string>
+  <string name="baby_daisy">Bébé Daisy</string>
+  <string name="baby_rosalina">Bébé Harmonie</string>
+
+  <!-- Featherweights -->
+  <string name="koopa_troopa">Koopa</string>
+  <string name="shy_guy">Maskass</string>
+
+  <!-- Cruiserweights -->
+  <string name="rosalina">Harmonie</string>
+
+  <!-- Cups -->
+  <string name="mushroom_cup">Coupe Champignon</string>
+  <string name="flower_cup">Coupe Fleur</string>
+  <string name="star_cup">Coupe Etoile</string>
+  <string name="special_cup">Coupe Spéciale</string>
+  <string name="shell_cup">Coupe Carapace</string>
+  <string name="banana_cup">Coupe Banane</string>
+  <string name="leaf_cup">Coupe Feuille</string>
+  <string name="lightning_cup">Coupe Eclair</string>
+
+  <!-- Courses -->
+
+  <!-- Mushroom Cup -->
+  <string name="mario_kart_stadium">Champidrome</string>
+  <string name="water_park">Parc Glougloop</string>
+  <string name="sweet_sweet_canyon">Piste aux délices</string>
+  <string name="thwomp_ruins">Temple Thwomp</string>
+
+  <!-- Flower Cup -->
+  <string name="mario_circuit">Circuit Mario</string>
+  <string name="toad_harbor">Promenade Toad</string>
+  <string name="twisted_mansion">Manoir Trempé</string>
+  <string name="shy_guy_falls">Cascades Maskass</string>
+
+  <!-- Star Cup -->
+  <string name="sunshine_airport">Aéroport Azur</string>
+  <string name="dolphin_shoals">Lagon Tourbillon</string>
+  <string name="electrodrome">Club Mario</string>
+  <string name="mount_wario">Descente givrée</string>
+
+  <!-- Special Cup -->
+  <string name="cloudtop_cruise">Voie céleste</string>
+  <string name="bone_dry_dunes">Désert Toussec</string>
+  <string name="bowsers_castle">Château de Bowser</string>
+  <string name="rainbow_road">Route Arc-en-ciel</string>
+
+  <!-- Shell Cup -->
+  <string name="moo_moo_meadows">Prairie Meuh Meuh</string>
+  <string name="mario_circuit_gba">Circuit Mario (GBA)</string>
+  <string name="cheep_cheep_beach">Plage Cheep Cheep</string>
+  <string name="toads_turnpike">Autoroute Toad</string>
+
+  <!-- Banana Cup -->
+  <string name="dry_dry_desert">Désert Sec Sec</string>
+  <string name="donut_plains_3">Plaine Donut 3</string>
+  <string name="royal_raceway">Autodrome Royal</string>
+  <string name="dk_jungle">Forêt tropicale DK</string>
+
+  <!-- Leaf Cup -->
+  <string name="wario_stadium">Stade Wario</string>
+  <string name="sherbet_land">Royaume Sorbet</string>
+  <string name="music_park">Piste musicale</string>
+  <string name="yoshi_valley">Vallée Yoshi</string>
+
+  <!-- Lightning Cup -->
+  <string name="tick_tock_clock">Horloge Tic-Tac</string>
+  <string name="piranha_plant_slide">Égout Piranha</string>
+  <string name="grumble_volcano">Volcan Grondant</string>
+  <string name="rainbow_road_n64">Route Arc-en-ciel (N64)</string>
+</resources>

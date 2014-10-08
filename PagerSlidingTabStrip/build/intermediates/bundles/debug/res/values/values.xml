@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/antrob/Google%20Drive/projects/configuremk8-android/PagerSlidingTabStrip/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <!-- From: file:/Users/antrob/Google%20Drive/projects/configuremk8-android/PagerSlidingTabStrip/res/values/attrs.xml -->
+    <eat-comment />
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstIndicatorColor" format="color" />
+        <attr name="pstUnderlineColor" format="color" />
+        <attr name="pstDividerColor" format="color" />
+        <attr name="pstIndicatorHeight" format="dimension" />
+        <attr name="pstUnderlineHeight" format="dimension" />
+        <attr name="pstDividerPadding" format="dimension" />
+        <attr name="pstTabPaddingLeftRight" format="dimension" />
+        <attr name="pstScrollOffset" format="dimension" />
+        <attr name="pstTabBackground" format="reference" />
+        <attr name="pstShouldExpand" format="boolean" />
+        <attr name="pstTextAllCaps" format="boolean" />
+    </declare-styleable>
+
+</resources>

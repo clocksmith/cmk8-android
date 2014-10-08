@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Characters -->
+
+  <!-- Featherweights -->
+  <string name="shy_guy">Maskache</string>
+
+  <!-- Courses -->
+
+  <!-- Mushroom Cup -->
+  <string name="sweet_sweet_canyon">Canyon Gourmand</string>
+  <string name="thwomp_ruins">Temple Ka-Bang</string>
+
+  <!-- Flower Cup -->
+  <string name="twisted_mansion">Manoir Englouti</string>
+
+  <!-- Star Cup -->
+  <string name="electrodrome">Électrodrome</string>
+
+  <!-- Special Cup -->
+  <string name="cloudtop_cruise">Dans les nuages</string>
+
+  <!-- Shell Cup -->
+  <string name="cheep_cheep_beach">Plage Aquazo</string>
+
+  <!-- Banana Cup -->
+  <string name="dry_dry_desert">Désert Sec-Sec</string>
+  <string name="donut_plains_3">Plaines Beigne 3</string>
+  <string name="dk_jungle">Jungle DK</string>
+</resources>

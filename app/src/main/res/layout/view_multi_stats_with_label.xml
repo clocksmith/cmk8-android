@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+  <ScrollView
+      android:id="@+id/multiStatsWithLabelView_scrollView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+      <LinearLayout
+          android:id="@+id/multiStatsWithLabelView_labelContainer"
+          android:orientation="vertical"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="left|center_vertical"/>
+      <LinearLayout
+          android:id="@+id/multiStatsWithLabelView_statViewContainer"
+          android:orientation="vertical"
+          android:layout_marginLeft="4dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_vertical"/>
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/partStatsDialogFragment_outerContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+  <View
+      android:id="@+id/partStatsDialogFragment_shade"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@android:color/black"/>
+  <LinearLayout
+      android:id="@+id/partStatsDialogFragment_mainContent"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:background="@drawable/panel_background_white"
+      android:layout_marginLeft="@dimen/default_view_margin"
+      android:layout_marginRight="@dimen/default_view_margin"
+      android:padding="@dimen/fragment_dialog_padding">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_fragment_title_height"
+        android:layout_marginBottom="8dp">
+      <ImageView
+          android:id="@+id/partStatsDialogFragment_imageView"
+          android:layout_width="@dimen/dialog_fragment_title_height"
+          android:layout_height="@dimen/dialog_fragment_title_height"/>
+      <TextView
+          android:id="@+id/partStatsDialogFragment_title"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginLeft="@dimen/fragment_dialog_padding"
+          android:gravity="left|center_vertical"
+          android:layout_weight="1"
+          android:textColor="@color/dark_gray"
+          android:textSize="@dimen/default_title_text_size_dp"/>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/partStatsDialogFragment_statsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+  </LinearLayout>
+
+  <View
+      android:id="@+id/partStatsDialogFragment_dummyViewForClickDismiss"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@android:color/transparent"/>
+</FrameLayout>

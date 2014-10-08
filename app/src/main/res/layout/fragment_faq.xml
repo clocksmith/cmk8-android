@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <WebView
+      android:id="@+id/faqFragment_webView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+  </WebView>
+
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right|bottom"
+      android:gravity="right"
+      android:layout_marginRight="@dimen/faq_margin"
+      android:layout_marginBottom="@dimen/faq_margin">
+    <ImageView
+        android:id="@+id/faqFragment_rateButton"
+        android:layout_width="@dimen/floating_button_diameter"
+        android:layout_height="@dimen/floating_button_diameter"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:layout_marginRight="@dimen/faq_margin"/>
+    <ImageView
+        android:id="@+id/faqFragment_donateButton"
+        android:layout_width="@dimen/floating_button_diameter"
+        android:layout_height="@dimen/floating_button_diameter"
+        android:layout_gravity="right"
+        android:gravity="center"/>
+  </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  <integer name="ga_sessionTimeout">300</integer>
+
+  <!-- Enable automatic Activity measurement -->
+  <bool name="ga_autoActivityTracking">true</bool>
+
+  <!-- Enable uncaught exceptions measurement -->
+  <bool name="ga_reportUncaughtExceptions">true</bool>
+
+  <!-- The screen names that will appear in reports -->
+  <screenName name="com.blunka.mk8assistant.main.MainActivity">
+    MainActivity
+  </screenName>
+  <screenName name="com.blunka.mk8assistant.main.configure.ConfigureFragment">
+    BuildFragment
+  </screenName>
+  <screenName name="com.blunka.mk8assistant.shared.stats.PartStatsDialogFragment">
+    PartStatsDialogFragment
+  </screenName>
+  <screenName name="com.blunka.mk8assistant.main.adjust.AdjustActivity">
+    AdjustActivity
+  </screenName>
+  <screenName name="com.blunka.mk8assistant.main.adjust.AdjustFragment">
+    AdjustFragment
+  </screenName>
+  <screenName name="com.blunka.mk8assistant.main.compare.CompareFragment">
+    CompareFragment
+  </screenName>
+  <screenName name="com.blunka.mk8assistant.main.maps.MapsFragment">
+    MapsFragment
+  </screenName>
+  <screenName name="com.blunka.mk8assistant.main.faq.FaqFragment">
+    FaqFragment
+  </screenName>
+  <screenName name="com.blunka.mk8assistant.donations.DonationsDialogFragment">
+    DonationsDialogFragment
+  </screenName>
+
+  <string name="ga_trackingId">UA-53388714-1</string>
+</resources>

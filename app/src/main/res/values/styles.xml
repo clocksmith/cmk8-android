@@ -1,0 +1,33 @@
+<resources>
+
+  <style name="MK8Theme" parent="android:Theme.Holo.Light.NoActionBar">
+    <item name="android:textViewStyle">@style/MK8TextViewStyle</item>
+    <item name="android:buttonStyle">@style/MK8ButtonStyle</item>
+    <item name="android:dialogTheme">@style/MK8DialogStyle</item>
+  </style>
+
+  <style name="MK8TextViewStyle" parent="android:Widget.TextView">
+    <item name="android:textColor">@color/dark_gray</item>
+    <item name="android:textSize">@dimen/default_text_size_dp</item>
+  </style>
+
+  <style name="MK8ButtonStyle" parent="android:Widget.Holo.Button">
+    <item name="android:textColor">@color/dark_gray</item>
+    <item name="android:textSize">@dimen/default_text_size_dp</item>
+  </style>
+
+  <style name="MK8DialogStyle" parent="@android:style/Theme.Holo.Light.Dialog">
+    <item name="android:textColor">@color/dark_gray</item>
+    <item name="android:textSize">@dimen/default_text_size_dp</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:colorBackgroundCacheHint">@null</item>
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowAnimationStyle">@null</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:backgroundDimEnabled">false</item>
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+
+</resources>

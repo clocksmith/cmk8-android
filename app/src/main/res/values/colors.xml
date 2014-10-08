@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="mk8_red">#e60012</color>
+  <color name="mk8_dark_red">#b3101d</color>
+  <color name="mk8_dark_red_half_transparent">#80b3101d</color>
+  <color name="mk8_blue">#33b5e5</color>
+  <color name="mk8_darker_blue">#22acdc</color>
+  <color name="mk8_blue_half_transparent">#8033b5e5</color>
+
+  <color name="dark_gray">#505050</color>
+  <color name="gray">#808080</color>
+  <color name="light_gray">#d0d0d0</color>
+  <color name="light_gray_full_transparent">#00d0d0d0</color>
+
+  <color name="indicator_color">@color/mk8_blue</color>
+  <color name="tab_underline_color">@color/mk8_blue_half_transparent</color>
+
+  <color name="text_on_dark_bg">#ffffff</color>
+
+  <color name="spinner_bg">#ffffff</color>
+
+  <color name="frame">@color/light_gray</color>
+</resources>

@@ -1,0 +1,78 @@
+<resources>
+  <!-- Global margins, padding, and spacing -->
+  <dimen name="default_view_margin">12dp</dimen>
+  <dimen name="fragment_dialog_padding">30dp</dimen>
+  <dimen name="spinner_padding">12dp</dimen>
+  <dimen name="spinner_bottom_margin">4dp</dimen>
+
+  <!-- Global dimensions -->
+  <dimen name="frame_thickness">0.5dp</dimen>
+
+  <!-- Global text sizes -->
+  <dimen name="default_title_text_size_dp">20dp</dimen>
+  <dimen name="default_title_text_size_sp">20sp</dimen>
+  <dimen name="default_text_size_dp">16dp</dimen>
+  <dimen name="default_text_size_sp">16sp</dimen>
+  <dimen name="default_spinner_text_size">@dimen/default_title_text_size_dp</dimen>
+
+  <!-- Main tab bar -->
+  <dimen name="main_tab_text_size">18dp</dimen>
+  <dimen name="main_tab_bar_bottom_margin">4dp</dimen>
+  <dimen name="main_tab_icon_width">48dp</dimen>
+  <dimen name="main_tab_icon_top_margin">3dp</dimen>
+  <dimen name="main_tab_title_bottom_margin">3dp</dimen>
+  <dimen name="main_tab_bar_indicator_height">3dp</dimen>
+  <dimen name="main_tab_bar_bottom_border_height">1dp</dimen>
+
+  <!-- Adjust -->
+  <dimen name="adjust_padding_lr">24dp</dimen>
+  <dimen name="progress_text_size">@dimen/default_title_text_size_dp</dimen>
+  <dimen name="circle_diameter_with_shadow">44dp</dimen>
+  <!-- This must be half of circle_diameter_with_shadow -->
+  <dimen name="circle_radius_with_shadow">22dp</dimen>
+  <dimen name="circle_shadow_thickness">3dp</dimen>
+  <!-- This must be circle_diameter_with_shadow minus double circle_shadow_thickness. -->
+  <dimen name="circle_diameter">38dp</dimen>
+  <!-- This must be half of circle_diameter -->
+  <dimen name="circle_radius">19dp</dimen>
+  <dimen name="seek_bar_progress_height">4dp</dimen>
+
+  <!-- Configure -->
+  <dimen name="configure_padding_lr">@dimen/default_view_margin</dimen>
+  <dimen name="paging_triangle_height">6dp</dimen>
+  <dimen name="part_group_chooser_padding">1dp</dimen>
+  <dimen name="part_group_text_size">@dimen/default_text_size_sp</dimen>
+
+  <!-- Compare -->
+  <dimen name="compare_padding_lr">@dimen/default_view_margin</dimen>
+  <dimen name="compare_spinner_text_size">@dimen/default_text_size_dp</dimen>
+
+  <!-- Maps -->
+  <dimen name="spinner_item_with_icon_margin_lr">12dp</dimen>
+  <dimen name="cup_spinner_item_drop_down_height">52dp</dimen>
+  <dimen name="cup_spinner_item_drop_down_icon_padding_tb">8dp</dimen>
+  <dimen name="course_spinner_item_drop_down_height">80dp</dimen>
+  <dimen name="course_spinner_item_drop_down_icon_padding_tb">0dp</dimen>
+
+  <!-- FAQ -->
+  <dimen name="faq_margin">18dp</dimen>
+  <dimen name="floating_button_diameter">72sp</dimen>
+
+  <!-- Part Stats Dialog Fragment -->
+  <dimen name="dialog_fragment_title_height">80sp</dimen>
+
+  <!-- Stats -->
+  <dimen name="single_stat_height">25sp</dimen>
+  <dimen name="stats_bar_height">15sp</dimen>
+  <dimen name="stats_bar_left_corner_radius">7.5sp</dimen>
+  <!-- This must be less than or equal to half stats_bar_height -->
+  <dimen name="stats_bar_right_corner_radius">7.5sp</dimen>
+  <dimen name="stats_bar_margin_tb">2dp</dimen>
+  <dimen name="single_stat_compare_height">50sp</dimen>
+  <dimen name="stats_difference_width">36sp</dimen>
+  <dimen name="stats_attribute_text_size">@dimen/default_text_size_sp</dimen>
+  <dimen name="stat_value_text_size">14sp</dimen>
+
+  <!-- Grip -->
+  <dimen name="grip_container_height">36dp</dimen>
+</resources>

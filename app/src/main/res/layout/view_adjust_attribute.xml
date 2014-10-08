@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/adjust_padding_lr"
+    android:paddingRight="@dimen/adjust_padding_lr"
+    tools:context=".AttributeAdjusterView">
+
+  <TextView
+      android:id="@+id/adjustAttribute_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      android:text="Hello"/>
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_vertical">
+  <com.blunka.mk8assistant.main.adjust.AdjustButtonView
+      android:id="@+id/adjustAttribute_decrementButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"/>
+  <com.blunka.mk8assistant.main.adjust.ProgressDisplayingSeekBar
+      android:id="@+id/adjustAttribute_seekBar"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/circle_diameter_with_shadow"
+      android:layout_toLeftOf="@+id/adjustAttribute_incrementButton"
+      android:layout_toRightOf="@+id/adjustAttribute_decrementButton"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="8dp"
+      android:paddingLeft="@dimen/circle_radius_with_shadow"
+      android:paddingRight="@dimen/circle_radius_with_shadow"
+      android:minHeight="@dimen/seek_bar_progress_height"
+      android:maxHeight="@dimen/seek_bar_progress_height"
+      android:thumb="@drawable/circle_mk8_blue"
+      android:progressDrawable="@drawable/horizontal_progress_mk8_blue"/>
+  <com.blunka.mk8assistant.main.adjust.AdjustButtonView
+      android:id="@+id/adjustAttribute_incrementButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"/>
+  </RelativeLayout>
+</LinearLayout>

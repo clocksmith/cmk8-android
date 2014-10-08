@@ -1,0 +1,116 @@
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/buildFragment_slidingUpPanel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:panelHeight="0dp"
+    sothree:shadowHeight="0dp"
+    sothree:fadeColor="@android:color/transparent">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="?android:attr/actionBarSize"
+      android:weightSum="2">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize">
+      <Spinner
+          android:id="@+id/configureFragment_spinner"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_gravity="center_vertical"
+          android:gravity="center_vertical"
+          android:layout_marginLeft="@dimen/configure_padding_lr"
+          android:layout_marginBottom="@dimen/spinner_bottom_margin"
+          android:layout_weight="1"/>
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:weightSum="100"
+          android:gravity="center"
+          android:layout_marginRight="@dimen/configure_padding_lr">
+        <com.blunka.mk8assistant.main.configure.StarView
+            android:id="@+id/configureFragment_starView"
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="0dp"
+            android:layout_weight="75"/>
+      </LinearLayout>
+    </LinearLayout>
+
+    <!-- top row -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="2"
+        android:layout_weight="1">
+      <com.blunka.mk8assistant.main.configure.PartGroupChooserView
+          android:id="@+id/configureFragment_characterChooser"
+          android:layout_height="match_parent"
+          android:layout_width="match_parent"
+          android:layout_weight="1"/>
+      <View
+          android:layout_width="@dimen/frame_thickness"
+          android:layout_height="match_parent"
+          android:background="@color/frame"/>
+      <com.blunka.mk8assistant.main.configure.PartGroupChooserView
+          android:id="@+id/configureFragment_vehicleChooser"
+          android:layout_height="match_parent"
+          android:layout_width="match_parent"
+          android:layout_weight="1"/>
+    </LinearLayout>
+
+    <!-- middle frame -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/frame_thickness"
+        android:background="@color/frame"/>
+
+    <!-- bottom row -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="2"
+        android:layout_weight="1">
+      <com.blunka.mk8assistant.main.configure.PartGroupChooserView
+          android:id="@+id/configureFragment_tireChooser"
+          android:layout_height="match_parent"
+          android:layout_width="match_parent"
+          android:layout_weight="1"/>
+      <View
+          android:layout_width="@dimen/frame_thickness"
+          android:layout_height="match_parent"
+          android:background="@color/frame"/>
+      <com.blunka.mk8assistant.main.configure.PartGroupChooserView
+          android:id="@+id/configureFragment_gliderChooser"
+          android:layout_height="match_parent"
+          android:layout_width="match_parent"
+          android:layout_weight="1"/>
+    </LinearLayout>
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/configureFragment_bottomPanel"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <com.blunka.mk8assistant.shared.stats.StatsDragView
+        android:id="@+id/configureFragment_dragView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.blunka.mk8assistant.main.configure.MultiStatsPositiveView
+        android:id="@+id/configureFragment_totalStatsView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/configure_padding_lr"
+        android:layout_marginRight="@dimen/configure_padding_lr"/>
+  </LinearLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

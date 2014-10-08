@@ -1,0 +1,20 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".BuilderActivity">
+  <com.astuetz.viewpager.extensions.PagerSlidingTabStrip
+      android:id="@+id/main_tabs"
+      android:layout_width="match_parent"
+      android:layout_height="?android:attr/actionBarSize"
+      android:layout_marginBottom="@dimen/main_tab_bar_bottom_margin"/>
+  <android.support.v4.view.ViewPager
+      android:id="@+id/main_viewPager"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:focusable="true"
+      android:focusableInTouchMode="true"/>
+</LinearLayout>

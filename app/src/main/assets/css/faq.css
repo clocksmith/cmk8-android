@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('../fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-Normal';
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-Condensed';
+  src: url('../fonts/RobotoCondensed-Regular.ttf');
+}
+
+body {
+  font-family: 'Roboto-Light';
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+.question {
+  font-family: 'Roboto-Condensed';
+  font-size: 24px;
+}
+
+.attribute {
+  font-family: 'Roboto-Normal';
+}

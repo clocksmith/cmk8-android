@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/singleStatMaybeNegativeView_mainContainer"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="2">
+  <FrameLayout
+      android:id="@+id/singleStatMaybeNegativeView_negativeBarContainer"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:gravity="center_vertical"
+      android:layout_weight="1">
+
+    <ImageView
+        android:id="@+id/singleStatMaybeNegativeView_negativeBarImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stats_bar_height"
+        android:layout_gravity="right|center_vertical"
+        android:gravity="right|center_vertical"
+        android:src="@drawable/stats_bar_negative_left_mk8_red"/>
+
+    <TextView
+        android:id="@+id/singleStatMaybeNegativeView_positiveValueLabel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stats_bar_height"
+        android:layout_gravity="right|center_vertical"
+        android:gravity="right|center_vertical"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
+        android:textSize="@dimen/stat_value_text_size"
+        android:textColor="@color/dark_gray"/>
+  </FrameLayout>
+
+  <TextView
+      android:id="@+id/singleStatMaybeNegativeView_zeroLabel"
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/stats_bar_height"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:layout_marginBottom="2dp"
+      android:textSize="@dimen/stat_value_text_size"
+      android:textColor="@color/dark_gray"
+      android:text="0"/>
+
+  <FrameLayout
+      android:id="@+id/singleStatMaybeNegativeView_positiveBarContainer"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:gravity="center_vertical"
+      android:layout_weight="1">
+
+    <ImageView
+        android:id="@+id/singleStatMaybeNegativeView_positiveBarImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stats_bar_height"
+        android:layout_gravity="left|center_vertical"
+        android:gravity="left|center_vertical"
+        android:src="@drawable/stats_bar_right_mk8_blue"/>
+
+    <TextView
+        android:id="@+id/singleStatMaybeNegativeView_negativeValueLabel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stats_bar_height"
+        android:layout_gravity="left|center_vertical"
+        android:gravity="left|center_vertical"
+        android:layout_marginLeft="2dp"
+        android:layout_marginBottom="2dp"
+        android:textSize="@dimen/stat_value_text_size"
+        android:textColor="@color/dark_gray"/>
+  </FrameLayout>
+
+</LinearLayout>

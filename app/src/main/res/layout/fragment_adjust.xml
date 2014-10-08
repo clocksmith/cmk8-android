@@ -1,0 +1,28 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuilderFragment">
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="?android:attr/actionBarSize">
+    <Spinner
+        android:id="@+id/adjustFragment_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/adjust_padding_lr"
+        android:layout_marginRight="@dimen/adjust_padding_lr"
+        android:layout_marginBottom="@dimen/spinner_bottom_margin"/>
+   </FrameLayout>
+  <LinearLayout
+      android:id="@+id/adjustFragment_attributesContainer"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="8dp"
+      android:layout_marginBottom="8dp"/>
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <FrameLayout
+      android:id="@+id/singleStatPositiveView_barContainer"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/singleStatPositiveView_barImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stats_bar_height"
+        android:layout_gravity="left|center_vertical"
+        android:gravity="left|center_vertical"
+        android:src="@drawable/stats_bar_right_mk8_blue"/>
+
+    <TextView
+        android:id="@+id/singleStatPositiveView_valueLabel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stats_bar_height"
+        android:layout_gravity="left|center_vertical"
+        android:gravity="left|center_vertical"
+        android:layout_marginLeft="2dp"
+        android:layout_marginBottom="2dp"
+        android:textSize="@dimen/stat_value_text_size"
+        android:textColor="@color/text_on_dark_bg"/>
+  </FrameLayout>
+</LinearLayout>

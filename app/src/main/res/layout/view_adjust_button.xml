@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/circle_diameter_with_shadow"
+    android:layout_height="@dimen/circle_diameter_with_shadow">
+  <ImageView
+      android:id="@+id/adjustButton_buttonImage"
+      android:layout_width="@dimen/circle_diameter"
+      android:layout_height="@dimen/circle_diameter"
+      android:src="@drawable/circle_gray"
+      android:layout_gravity="center"/>
+</FrameLayout>

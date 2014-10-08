@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mapsFragment_rootView"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <Spinner
+      android:id="@+id/mapsFragment_cupSpinner"
+      android:layout_width="match_parent"
+      android:layout_height="?android:attr/actionBarSize"
+      android:layout_gravity="center_vertical"
+      android:gravity="center_vertical"
+      android:layout_marginLeft="@dimen/configure_padding_lr"
+      android:layout_marginRight="@dimen/configure_padding_lr"
+      android:layout_marginBottom="@dimen/spinner_bottom_margin"/>
+
+  <Spinner
+      android:id="@+id/mapsFragment_courseSpinner"
+      android:layout_width="match_parent"
+      android:layout_height="?android:attr/actionBarSize"
+      android:gravity="center_vertical"
+      android:layout_marginLeft="@dimen/configure_padding_lr"
+      android:layout_marginRight="@dimen/configure_padding_lr"
+      android:layout_marginBottom="@dimen/spinner_bottom_margin"/>
+
+  <ImageView
+      android:id="@+id/mapsFragment_upwardTriangle"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/paging_triangle_height"
+      android:layout_marginTop="@dimen/paging_triangle_height"
+      android:gravity="center"
+      android:src="@drawable/upward_triangle_dark_gray"/>
+  <com.blunka.mk8assistant.main.maps.MapViewPager
+      android:id="@+id/mapsFragment_mapViewPager"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"/>
+  <ImageView
+      android:id="@+id/mapsFragment_downwardTriangle"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/paging_triangle_height"
+      android:layout_marginBottom="@dimen/paging_triangle_height"
+      android:gravity="center"
+      android:src="@drawable/downward_triangle_dark_gray"/>
+</LinearLayout>
