@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * Created by clocksmith on 9/10/14.
  *
- * We cash our own item view since it has non trivial resizing and so we don't need to constantly
+ * We cache our own item view since it has non trivial resizing and so we don't need to constantly
  * relayout the view.
  */
 public class MapsSpinnerAdapter<T extends HasDisplayNameAndIcon> extends ArrayAdapter<T> {
