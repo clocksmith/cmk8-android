@@ -20,8 +20,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
-import javax.annotation.Nullable;
-
 /**
  * Created by clocksmith on 7/16/14.
  */
@@ -57,9 +55,8 @@ public class StarredBuildUtils {
     List<KartConfiguration> allStarredConfigurations = Lists.newArrayList(Lists.transform(
         Lists.newArrayList(getAllStarredKeys(context)),
         new Function<String, KartConfiguration>() {
-          @Nullable
           @Override
-          public KartConfiguration apply(@Nullable String key) {
+          public KartConfiguration apply(String key) {
             return getKartConfigurationFromKey(key);
           }
         }
@@ -79,9 +76,8 @@ public class StarredBuildUtils {
 
     return Lists.newArrayList(Lists.transform(allStarredConfigurations,
         new Function<KartConfiguration, String>() {
-          @Nullable
           @Override
-          public String apply(@Nullable KartConfiguration configuration) {
+          public String apply(KartConfiguration configuration) {
             return getKeyFromConfiguration(configuration);
           }
         }

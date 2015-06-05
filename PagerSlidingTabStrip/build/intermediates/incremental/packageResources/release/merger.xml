@@ -1,64 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="2" >
-
-    <dataSet config="main" >
-        <source path="/Users/antrob/Google Drive/projects/configuremk8-android/PagerSlidingTabStrip/res" >
-            <file
-                name="background_tab"
-                path="/Users/antrob/Google Drive/projects/configuremk8-android/PagerSlidingTabStrip/res/drawable/background_tab.xml"
-                qualifiers=""
-                type="drawable" />
-            <file
-                path="/Users/antrob/Google Drive/projects/configuremk8-android/PagerSlidingTabStrip/res/values/attrs.xml"
-                qualifiers="" >
-                <declare-styleable name="PagerSlidingTabStrip" >
-                    <attr
-                        name="pstIndicatorColor"
-                        format="color" />
-                    <attr
-                        name="pstUnderlineColor"
-                        format="color" />
-                    <attr
-                        name="pstDividerColor"
-                        format="color" />
-                    <attr
-                        name="pstIndicatorHeight"
-                        format="dimension" />
-                    <attr
-                        name="pstUnderlineHeight"
-                        format="dimension" />
-                    <attr
-                        name="pstDividerPadding"
-                        format="dimension" />
-                    <attr
-                        name="pstTabPaddingLeftRight"
-                        format="dimension" />
-                    <attr
-                        name="pstScrollOffset"
-                        format="dimension" />
-                    <attr
-                        name="pstTabBackground"
-                        format="reference" />
-                    <attr
-                        name="pstShouldExpand"
-                        format="boolean" />
-                    <attr
-                        name="pstTextAllCaps"
-                        format="boolean" />
-                </declare-styleable>
-            </file>
-            <file
-                path="/Users/antrob/Google Drive/projects/configuremk8-android/PagerSlidingTabStrip/res/values/colors.xml"
-                qualifiers="" >
-                <color name="background_tab_pressed" >#6633B5E5
-                </color>
-            </file>
-        </source>
-        <source path="/Users/antrob/Google Drive/projects/configuremk8-android/PagerSlidingTabStrip/build/generated/res/rs/release" />
-        <source path="/Users/antrob/Google Drive/projects/configuremk8-android/PagerSlidingTabStrip/build/generated/res/generated/release" />
-    </dataSet>
-    <dataSet config="release" >
-        <source path="/Users/antrob/Google Drive/projects/configuremk8-android/PagerSlidingTabStrip/src/release/res" />
-    </dataSet>
-
-</merger>
+<merger version="3"><dataSet config="main"><source path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/res"><file name="background_tab" path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/res/drawable/background_tab.xml" qualifiers="" type="drawable"/><file path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/res/values/attrs.xml" qualifiers=""><declare-styleable name="PagerSlidingTabStrip">
+        <attr format="color" name="pstIndicatorColor"/>
+        <attr format="color" name="pstUnderlineColor"/>
+        <attr format="color" name="pstDividerColor"/>
+        <attr format="dimension" name="pstIndicatorHeight"/>
+        <attr format="dimension" name="pstUnderlineHeight"/>
+        <attr format="dimension" name="pstDividerPadding"/>
+        <attr format="dimension" name="pstTabPaddingLeftRight"/>
+        <attr format="dimension" name="pstScrollOffset"/>
+        <attr format="reference" name="pstTabBackground"/>
+        <attr format="boolean" name="pstShouldExpand"/>
+        <attr format="boolean" name="pstTextAllCaps"/>
+    </declare-styleable></file><file path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/res/values/colors.xml" qualifiers=""><color name="background_tab_pressed">#6633B5E5</color></file></source><source path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/build/generated/res/rs/release"/><source path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/build/generated/res/generated/release"/></dataSet><dataSet config="release"><source path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/src/release/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="PagerSlidingTabStrip"><attr format="color" name="pstIndicatorColor"/><attr format="color" name="pstUnderlineColor"/><attr format="color" name="pstDividerColor"/><attr format="dimension" name="pstIndicatorHeight"/><attr format="dimension" name="pstUnderlineHeight"/><attr format="dimension" name="pstDividerPadding"/><attr format="dimension" name="pstTabPaddingLeftRight"/><attr format="dimension" name="pstScrollOffset"/><attr format="reference" name="pstTabBackground"/><attr format="boolean" name="pstShouldExpand"/><attr format="boolean" name="pstTextAllCaps"/></declare-styleable></configuration></mergedItems></merger>

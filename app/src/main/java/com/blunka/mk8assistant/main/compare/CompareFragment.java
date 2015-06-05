@@ -139,6 +139,9 @@ public class CompareFragment extends AnalyticsFragment {
 
     mSlidingUpPanel.setDragView(mDragView);
     mSlidingUpPanel.setPanelSlideListener(mComparePanelSlideListener);
+    mSlidingUpPanel.setPanelHeight(0);
+    mSlidingUpPanel.setShadowHeight(0);
+    mSlidingUpPanel.setCoveredFadeColor(android.R.color.transparent);
 
     mLeftSpinner.setOnItemSelectedListener(mSpinnerListener);
     mRightSpinner.setOnItemSelectedListener(mSpinnerListener);
@@ -199,7 +202,7 @@ public class CompareFragment extends AnalyticsFragment {
     mLessThanTwoMessage.setVisibility(show ? View.INVISIBLE : View.VISIBLE);
     mSlidingUpPanel.setVisibility(show ? View.VISIBLE : View.INVISIBLE);
     if (!show) {
-      mSlidingUpPanel.collapsePanel();
+      mSlidingUpPanel.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
     }
   }
 

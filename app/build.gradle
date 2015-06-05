@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion "20.0.0"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "com.blunka.mk8assistant"
         minSdkVersion 14
-        targetSdkVersion 20
-        versionCode 20
-        versionName "1.007"
+        targetSdkVersion 22
+        versionCode 21
+        versionName "1.1"
     }
 
     compileOptions {
@@ -19,7 +19,7 @@ android {
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -30,15 +30,15 @@ repositories {
 }
 
 dependencies {
-    compile 'com.google.android.gms:play-services:5.0.77'
+    compile 'com.google.android.gms:play-services:7.5.0'
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     compile project(':PagerSlidingTabStrip')
 
-    compile group: 'com.google.guava', name: 'guava', version: '12.0'
-    compile 'com.google.code.gson:gson:2.2.4'
+    compile group: 'com.google.guava', name: 'guava', version: '18.0'
+    compile 'com.google.code.gson:gson:2.3'
 
     compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
-    compile 'com.sothree.slidinguppanel:library:+'
+    compile 'com.sothree.slidinguppanel:library:3.0.0'
 }

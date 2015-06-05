@@ -6,15 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
   <com.sothree.slidinguppanel.SlidingUpPanelLayout
-      xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:sothree="http://schemas.android.com/apk/res-auto"
       android:id="@+id/compareFragment_slidingUpPanel"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:gravity="bottom"
-      sothree:panelHeight="0dp"
-      sothree:shadowHeight="0dp"
-      sothree:fadeColor="@android:color/transparent">
+      android:gravity="bottom">
     <LinearLayout
         android:id="@+id/compareFragment_mainArea"
         android:orientation="vertical"

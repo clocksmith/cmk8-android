@@ -161,6 +161,9 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
     mStarView.setOnClickListener(mStarListener);
     mSlidingUpPanel.setDragView(mDragView);
     mSlidingUpPanel.setPanelSlideListener(mBuildPanelSlideListener);
+    mSlidingUpPanel.setPanelHeight(0);
+    mSlidingUpPanel.setShadowHeight(0);
+    mSlidingUpPanel.setCoveredFadeColor(android.R.color.transparent);
 
     mCharacterChooser.setListener(this);
     mVehicleChooser.setListener(this);
