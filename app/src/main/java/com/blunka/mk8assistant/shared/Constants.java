@@ -22,6 +22,6 @@ public class Constants {
   public static final String STATS_DECIMAL_FORMAT = "0.00";
   public static final float MAX_TOTAL_STATS_VALUE = 6f;
   public static final float MAX_SMALL_PART_STATS_VALUE = 1.5f;
-  public static final int MAX_NUMBER_PARTS_PER_GROUP = 7;
+  public static final int MAX_NUMBER_PARTS_PER_GROUP = 8;
   public static final int NUM_COURSES_IN_CUP = 4;
 }
