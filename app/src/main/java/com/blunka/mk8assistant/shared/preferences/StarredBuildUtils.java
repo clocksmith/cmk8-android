@@ -4,10 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.blunka.mk8assistant.data.KartConfiguration;
-import com.blunka.mk8assistant.data.parts.CharacterGroup;
-import com.blunka.mk8assistant.data.parts.GliderGroup;
-import com.blunka.mk8assistant.data.parts.TireGroup;
-import com.blunka.mk8assistant.data.parts.VehicleGroup;
+import com.blunka.mk8assistant.data.parts.Part;
+import com.blunka.mk8assistant.data.parts.PartUtils;
 import com.blunka.mk8assistant.main.configure.ConfigureModel;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
@@ -66,10 +64,10 @@ public class StarredBuildUtils {
       @Override
       public int compare(KartConfiguration lhs, KartConfiguration rhs) {
         return ComparisonChain.start()
-            .compare(lhs.getCharacterGroup().ordinal(), rhs.getCharacterGroup().ordinal())
-            .compare(lhs.getVehicleGroup().ordinal(), rhs.getVehicleGroup().ordinal())
-            .compare(lhs.getTireGroup().ordinal(), rhs.getTireGroup().ordinal())
-            .compare(lhs.getGliderGroup().ordinal(), rhs.getGliderGroup().ordinal())
+            .compare(lhs.getCharacterGroup().getIndex(), rhs.getCharacterGroup().getIndex())
+            .compare(lhs.getVehicleGroup().getIndex(), rhs.getVehicleGroup().getIndex())
+            .compare(lhs.getTireGroup().getIndex(), rhs.getTireGroup().getIndex())
+            .compare(lhs.getGliderGroup().getIndex(), rhs.getGliderGroup().getIndex())
             .result();
       }
     });
@@ -92,10 +90,10 @@ public class StarredBuildUtils {
     if (configuration == null) {
       return null;
     } else {
-      return Joiner.on(KEY_SEPERATOR).join(configuration.getCharacterGroup().name(),
-          configuration.getVehicleGroup().name(),
-          configuration.getTireGroup().name(),
-          configuration.getGliderGroup().name());
+      return Joiner.on(KEY_SEPERATOR).join(configuration.getCharacterGroup().getName(),
+          configuration.getVehicleGroup().getName(),
+          configuration.getTireGroup().getName(),
+          configuration.getGliderGroup().getName());
     }
   }
 
@@ -109,11 +107,12 @@ public class StarredBuildUtils {
 
   public static String getNameFromConfiguration(Context context,
       KartConfiguration configuration) {
+    // It is intentional that character is get display name while the rest are get name
     return Joiner.on(NAME_SEPERATOR).join(
-        configuration.getCharacterGroup().getDisplayGroupName(context),
-        configuration.getVehicleGroup().name(),
-        configuration.getTireGroup().name(),
-        configuration.getGliderGroup().name());
+        configuration.getCharacterGroup().getDisplayName(),
+        configuration.getVehicleGroup().getName(),
+        configuration.getTireGroup().getName(),
+        configuration.getGliderGroup().getName());
   }
 
   public static KartConfiguration getKartConfigurationFromKey(String key) {
@@ -122,10 +121,10 @@ public class StarredBuildUtils {
     } else {
       List<String> keyFragments = Lists.newArrayList(Splitter.on(KEY_SEPERATOR).split(key));
       return KartConfiguration.newBuilder()
-          .withCharacterGroup(CharacterGroup.valueOf(keyFragments.get(0)))
-          .withVehicleGroup(VehicleGroup.valueOf(keyFragments.get(1)))
-          .withTireGroup(TireGroup.valueOf(keyFragments.get(2)))
-          .withGliderGroup(GliderGroup.valueOf(keyFragments.get(3)))
+          .withCharacterGroup(PartUtils.getPartGroup(Part.Type.CHARACTER, keyFragments.get(0)))
+          .withVehicleGroup(PartUtils.getPartGroup(Part.Type.VEHICLE, keyFragments.get(1)))
+          .withTireGroup(PartUtils.getPartGroup(Part.Type.TIRE, keyFragments.get(2)))
+          .withGliderGroup(PartUtils.getPartGroup(Part.Type.GLIDER, keyFragments.get(3)))
           .build();
     }
   }

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.blunka.mk8assistant.R;
 import com.blunka.mk8assistant.data.HasDisplayNameAndIcon;
+import com.blunka.mk8assistant.data.parts.Part;
 import com.blunka.mk8assistant.data.parts.PartGroup;
 import com.blunka.mk8assistant.shared.ui.FontLoader;
 import com.google.common.collect.Lists;
@@ -43,7 +44,7 @@ public class PartGroupView extends LinearLayout {
     mBottomRow = (LinearLayout) findViewById(R.id.partGroupView_bottomRow);
 
     mGroupLabel.setTypeface(FontLoader.getInstance().getRobotoCondensedLightTypeface());
-    mGroupLabel.setText(partGroup.getDisplayGroupName(context));
+    mGroupLabel.setText(partGroup.getDisplayName());
     this.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
       public boolean onPreDraw() {
         PartGroupView.this.getViewTreeObserver().removeOnPreDrawListener(this);
@@ -55,25 +56,25 @@ public class PartGroupView extends LinearLayout {
     });
   }
 
-  private void fillRows(List<HasDisplayNameAndIcon> parts) {
+  private void fillRows(List<Part> parts) {
     if (parts.size() < MAX_NUM_PARTS_PER_ROW) {
       fillRow(mTopRow, parts);
       mBottomRow.setVisibility(View.GONE);
       mSingleRowSpacer.setVisibility(View.VISIBLE);
     } else {
-      List<List<HasDisplayNameAndIcon>> sublists = Lists.partition(parts,
+      List<List<Part>> sublists = Lists.partition(parts,
           (int) Math.ceil((float) parts.size() / 2));
       fillRow(mTopRow, sublists.get(0));
       fillRow(mBottomRow, sublists.get(1));
     }
   }
 
-  private void fillRow(LinearLayout row, List<HasDisplayNameAndIcon> parts) {
+  private void fillRow(LinearLayout row, List<Part> parts) {
     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
         mViewWidth / MAX_NUM_PARTS_PER_ROW,
         LayoutParams.MATCH_PARENT);
     layoutParams.gravity = Gravity.CENTER;
-    for (HasDisplayNameAndIcon part : parts) {
+    for (Part part : parts) {
       PartView partView = new PartView(getContext(),
           part,
           mViewWidth / MAX_NUM_PARTS_PER_ROW,

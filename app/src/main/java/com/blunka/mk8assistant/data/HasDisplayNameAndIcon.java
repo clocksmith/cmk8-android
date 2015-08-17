@@ -1,14 +1,10 @@
 package com.blunka.mk8assistant.data;
 
-import android.content.Context;
-
 /**
- * Created by clocksmith on 7/23/14.
+ * Created by clocksmith on 8/16/15.
  */
-
 public interface HasDisplayNameAndIcon {
-  public String getDisplayName(Context context);
+  public String getDisplayName();
 
-  public int getIconResourceId();
+  public int getIconResId();
 }
-

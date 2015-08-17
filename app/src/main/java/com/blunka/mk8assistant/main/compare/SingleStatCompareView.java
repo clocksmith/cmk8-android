@@ -21,8 +21,8 @@ import com.blunka.mk8assistant.shared.ui.UiUtils;
 public class SingleStatCompareView extends AbstractSingleStatView {
   private static final String TAG = SingleStatCompareView.class.getSimpleName();
 
-  private float mNewDifferenceValue;
-  private float mMaxWidth;
+  private double mNewDifferenceValue;
+  private double mMaxWidth;
 
   private TextView mLeftValueTextView;
   private TextView mLabel;
@@ -91,9 +91,9 @@ public class SingleStatCompareView extends AbstractSingleStatView {
     mRightBar.setPivotX(0);
   }
 
-  public void updateValues(float newLeftValue, float newRightValue) {
+  public void updateValues(double newLeftValue, double newRightValue) {
     // Update the values.
-    float originalDifferenceValue = mNewDifferenceValue;
+    double originalDifferenceValue = mNewDifferenceValue;
     mNewDifferenceValue = newLeftValue - newRightValue;
 
     // Update the labels.

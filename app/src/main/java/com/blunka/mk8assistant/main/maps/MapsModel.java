@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.blunka.mk8assistant.data.courses.Course;
+import com.blunka.mk8assistant.data.courses.CourseData;
 import com.blunka.mk8assistant.data.courses.Cup;
 import com.blunka.mk8assistant.shared.Model;
 
@@ -15,7 +16,7 @@ public class MapsModel implements Parcelable, Model {
   private Course mCourse;
 
   public MapsModel() {
-    this(Cup.values()[0], Course.values()[0]);
+    this(CourseData.CUPS.get(0), CourseData.CUPS.get(0).getCourses().get(0));
   }
 
   public MapsModel(Cup cup, Course course) {
@@ -40,14 +41,14 @@ public class MapsModel implements Parcelable, Model {
   }
 
   public MapsModel(Parcel in) {
-    mCup = Cup.valueOf(in.readString());
-    mCourse = Course.valueOf(in.readString());
+    mCup = in.readParcelable(Cup.class.getClassLoader());
+    mCourse = in.readParcelable(Course.class.getClassLoader());
   }
 
   @Override
   public void writeToParcel(Parcel parcel, int flags) {
-    parcel.writeString(mCup.name());
-    parcel.writeString(mCourse.name());
+    parcel.writeParcelable(mCup, flags);
+    parcel.writeParcelable(mCourse, flags);
   }
 
   public static final Parcelable.Creator<MapsModel> CREATOR =

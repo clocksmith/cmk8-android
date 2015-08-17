@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/build/intermediates/bundles/debug/res/values/values.xml -->
+    <eat-comment/>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <declare-styleable name="PagerSlidingTabStrip"><attr format="color" name="pstIndicatorColor"/><attr format="color" name="pstUnderlineColor"/><attr format="color" name="pstDividerColor"/><attr format="dimension" name="pstIndicatorHeight"/><attr format="dimension" name="pstUnderlineHeight"/><attr format="dimension" name="pstDividerPadding"/><attr format="dimension" name="pstTabPaddingLeftRight"/><attr format="dimension" name="pstScrollOffset"/><attr format="reference" name="pstTabBackground"/><attr format="boolean" name="pstShouldExpand"/><attr format="boolean" name="pstTextAllCaps"/></declare-styleable>
+</resources>

@@ -13,11 +13,8 @@ import android.widget.TextView;
 
 import com.blunka.mk8assistant.R;
 import com.blunka.mk8assistant.data.Stats;
-import com.blunka.mk8assistant.data.parts.Glider;
-import com.blunka.mk8assistant.data.HasDisplayNameAndIcon;
-import com.blunka.mk8assistant.data.parts.PartsUtils;
-import com.blunka.mk8assistant.data.parts.Tire;
-import com.blunka.mk8assistant.data.parts.Vehicle;
+import com.blunka.mk8assistant.data.parts.Part;
+import com.blunka.mk8assistant.data.parts.PartUtils;
 import com.blunka.mk8assistant.main.configure.MultiStatsPositiveView;
 import com.blunka.mk8assistant.shared.ArgKeys;
 import com.blunka.mk8assistant.shared.FilteredLogger;
@@ -32,7 +29,7 @@ public class PartStatsDialogFragment extends TransitionImageDialogFragment {
   private long mStartTimeMs;
 
   // Model.
-  private HasDisplayNameAndIcon mPart;
+  private Part mPart;
   private int mTransitionResourceId;
 
   // View
@@ -41,13 +38,13 @@ public class PartStatsDialogFragment extends TransitionImageDialogFragment {
   private MultiStatsWithLabelView mMultiStatsWithLabelView;
   private View mDummyViewForClickDismiss;
 
-  public static PartStatsDialogFragment newInstance(HasDisplayNameAndIcon part,
+  public static PartStatsDialogFragment newInstance(Part part,
       ImageView startImageView,
       int resourceId) {
     PartStatsDialogFragment partStatsDialogFragment = new PartStatsDialogFragment();
 
     Bundle args = new Bundle();
-    args.putSerializable(ArgKeys.PART, (Enum) part);
+    args.putParcelable(ArgKeys.PART, part);
     args.putInt(ArgKeys.RESOURCE_ID, resourceId);
     partStatsDialogFragment.insertSharedArgs(args, Lists.newArrayList(startImageView));
     partStatsDialogFragment.setArguments(args);
@@ -75,7 +72,7 @@ public class PartStatsDialogFragment extends TransitionImageDialogFragment {
     } else {
       bundle = getArguments();
     }
-    mPart = (HasDisplayNameAndIcon) bundle.getSerializable(ArgKeys.PART);
+    mPart = bundle.getParcelable(ArgKeys.PART);
     mTransitionResourceId = bundle.getInt(ArgKeys.RESOURCE_ID);
     unpackSharedArgs(bundle);
   }
@@ -100,7 +97,7 @@ public class PartStatsDialogFragment extends TransitionImageDialogFragment {
         view.findViewById(R.id.partStatsDialogFragment_dummyViewForClickDismiss);
 
     mTitle.setTypeface(FontLoader.getInstance().getRobotoCondensedLightTypeface());
-    mTitle.setText(mPart.getDisplayName(getActivity()));
+    mTitle.setText(mPart.getDisplayName());
 
     mDummyViewForClickDismiss.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -131,12 +128,12 @@ public class PartStatsDialogFragment extends TransitionImageDialogFragment {
   protected void setupViewForTransitionOut() {
     if (mMultiStatsWithLabelView != null) {
       mMultiStatsWithLabelView.updateStatViews(Stats.newBuilder()
-          .withAcceleration(0f)
-          .withAverageSpeed(0f)
-          .withAverageHandling(0f)
-          .withMiniturbo(0f)
-          .withTraction(0f)
-          .withWeight(0f)
+          .withAcceleration(0d)
+          .withAverageSpeed(0d)
+          .withAverageHandling(0d)
+          .withMiniturbo(0d)
+          .withTraction(0d)
+          .withWeight(0d)
           .build());
     }
   }
@@ -156,13 +153,17 @@ public class PartStatsDialogFragment extends TransitionImageDialogFragment {
 
   private void addStatsView() {
     FilteredLogger.d(TAG, "addStatsView(): " + (System.currentTimeMillis() - mStartTimeMs) + "ms");
-    if (mPart instanceof Vehicle ||
-        mPart instanceof Tire ||
-        mPart instanceof Glider) {
-      mMultiStatsWithLabelView = new MultiStatsMaybeNegativeView(getActivity());
-    } else {
-      mMultiStatsWithLabelView = new MultiStatsPositiveView(getActivity());
+    switch (mPart.getType()) {
+      case CHARACTER:
+        mMultiStatsWithLabelView = new MultiStatsPositiveView(getActivity());
+        break;
+      case VEHICLE:
+      case TIRE:
+      case GLIDER:
+        mMultiStatsWithLabelView = new MultiStatsMaybeNegativeView(getActivity());
+        break;
     }
+
     FilteredLogger.d(TAG, "addStatsView() mMultiStatsWithLabelView created: " +
         (System.currentTimeMillis() - mStartTimeMs) + "ms");
     mStatsContainer.addView(mMultiStatsWithLabelView, new LinearLayout.LayoutParams(
@@ -170,6 +171,6 @@ public class PartStatsDialogFragment extends TransitionImageDialogFragment {
         LinearLayout.LayoutParams.MATCH_PARENT));
     FilteredLogger.d(TAG, "addStatsView() mMultiStatsWithLabelView added to layout: " +
         (System.currentTimeMillis() - mStartTimeMs) + "ms");
-    mMultiStatsWithLabelView.updateStatViews(PartsUtils.getPartGroup(mPart).getPartStats());
+    mMultiStatsWithLabelView.updateStatViews(PartUtils.getPartGroup(mPart).getStats());
   }
 }

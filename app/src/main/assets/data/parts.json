@@ -1,0 +1,634 @@
+{
+  "character_groups": [
+    {
+      "name": "FLYWEIGHT",
+      "stats": {
+        "acceleration": 3.25,
+        "ground_speed": 2.25,
+        "antigravity_speed": 2.5,
+        "air_speed": 2.25,
+        "water_speed": 2.75,
+        "miniturbo": 3,
+        "ground_handling": 4.75,
+        "antigravity_handling": 5,
+        "air_handling": 4.5,
+        "water_handling": 4.75,
+        "traction": 4.5,
+        "weight": 2.25
+      },
+      "characters": [
+        "BABY_MARIO",
+        "BABY_LUIGI",
+        "BABY_PEACH",
+        "BABY_DAISY",
+        "BABY_ROSALINA",
+        "LEMMY"
+      ]
+    },
+    {
+      "name": "FEATHERWEIGHT",
+      "stats": {
+        "acceleration": 3,
+        "ground_speed": 2.75,
+        "antigravity_speed": 3,
+        "air_speed": 2.75,
+        "water_speed": 3.25,
+        "miniturbo": 2.75,
+        "ground_handling": 4.25,
+        "antigravity_handling": 4.5,
+        "air_handling": 4,
+        "water_handling": 4.25,
+        "traction": 4.25,
+        "weight": 2.75
+      },
+      "characters": [
+        "TOAD",
+        "KOOPA_TROOPA",
+        "SHY_GUY",
+        "LAKITU",
+        "TOADETTE",
+        "LARRY",
+        "WENDY",
+        "ISABELLE"
+      ]
+    },
+    {
+      "name": "CATWEIGHT",
+      "stats": {
+        "acceleration": 3,
+        "ground_speed": 3.25,
+        "antigravity_speed": 3.5,
+        "air_speed": 3.25,
+        "water_speed": 3.75,
+        "miniturbo": 2.5,
+        "ground_handling": 3.75,
+        "antigravity_handling": 4,
+        "air_handling": 3.5,
+        "water_handling": 3.75,
+        "traction": 4,
+        "weight": 3
+      },
+      "characters": [
+        "CAT_PEACH",
+        "VILLAGER_FEMALE"
+      ]
+    },
+    {
+      "name": "LIGHTWEIGHT",
+      "stats": {
+        "acceleration": 2.75,
+        "ground_speed": 3.25,
+        "antigravity_speed": 3.5,
+        "air_speed": 3.25,
+        "water_speed": 3.75,
+        "miniturbo": 2.5,
+        "ground_handling": 3.75,
+        "antigravity_handling": 4,
+        "air_handling": 3.5,
+        "water_handling": 3.75,
+        "traction": 4,
+        "weight": 3.25
+      },
+      "characters": [
+        "PEACH",
+        "DAISY",
+        "YOSHI"
+      ]
+    },
+    {
+      "name": "TANOOKIWEIGHT",
+      "stats": {
+        "acceleration": 2.75,
+        "ground_speed": 3.75,
+        "antigravity_speed": 4,
+        "air_speed": 3.75,
+        "water_speed": 4.25,
+        "miniturbo": 2.25,
+        "ground_handling": 3.25,
+        "antigravity_handling": 3.5,
+        "air_handling": 3,
+        "water_handling": 3.25,
+        "traction": 3.75,
+        "weight": 3.5
+      },
+      "characters": [
+        "TANOOKI_MARIO",
+        "VILLAGER_MALE",
+        "YOSHI"
+      ]
+    },
+    {
+      "name": "MIDDLEWEIGHT",
+      "stats": {
+        "acceleration": 2.5,
+        "ground_speed": 3.75,
+        "antigravity_speed": 4,
+        "air_speed": 3.75,
+        "water_speed": 4.25,
+        "miniturbo": 2.25,
+        "ground_handling": 3.25,
+        "antigravity_handling": 3.5,
+        "air_handling": 3,
+        "water_handling": 3.25,
+        "traction": 3.75,
+        "weight": 3.75
+      },
+      "characters": [
+        "MARIO",
+        "LUIGI",
+        "IGGY",
+        "LUDWIG"
+      ]
+    },
+    {
+      "name": "CRUISERWEIGHT",
+      "stats": {
+        "acceleration": 2.25,
+        "ground_speed": 4.25,
+        "antigravity_speed": 4.5,
+        "air_speed": 4.25,
+        "water_speed": 4.75,
+        "miniturbo": 2,
+        "ground_handling": 2.75,
+        "antigravity_handling": 3,
+        "air_handling": 2.5,
+        "water_handling": 2.75,
+        "traction": 3.5,
+        "weight": 4.25
+      },
+      "characters": [
+        "DONKEY_KONG",
+        "WALUIGI",
+        "ROSALINA",
+        "ROY",
+        "LINK"
+      ]
+    },
+    {
+      "name": "METALWEIGHT",
+      "stats": {
+        "acceleration": 2,
+        "ground_speed": 4.25,
+        "antigravity_speed": 4.5,
+        "air_speed": 4.25,
+        "water_speed": 4.75,
+        "miniturbo": 1.75,
+        "ground_handling": 2.75,
+        "antigravity_handling": 3,
+        "air_handling": 2.5,
+        "water_handling": 2.75,
+        "traction": 3.25,
+        "weight": 4.75
+      },
+      "characters": [
+        "METAL_MARIO",
+        "PINK_GOLD_PEACH"
+      ]
+    },
+    {
+      "name": "HEAVYWEIGHT",
+      "stats": {
+        "acceleration": 2,
+        "ground_speed": 4.75,
+        "antigravity_speed": 5,
+        "air_speed": 4.75,
+        "water_speed": 5.25,
+        "miniturbo": 1.75,
+        "ground_handling": 2.25,
+        "antigravity_handling": 2.5,
+        "air_handling": 2,
+        "water_handling": 2.25,
+        "traction": 3.25,
+        "weight": 4.75
+      },
+      "characters": [
+        "BOWSER",
+        "WARIO",
+        "MORTON",
+        "DRY_BOWSER"
+      ]
+    }
+  ],
+  "vehicle_groups": [
+    {
+      "name": "A",
+      "stats": {
+        "acceleration": 0,
+        "ground_speed": 0,
+        "antigravity_speed": 0,
+        "air_speed": 0,
+        "water_speed": 0,
+        "miniturbo": 0,
+        "ground_handling": 0,
+        "antigravity_handling": 0,
+        "air_handling": 0,
+        "water_handling": 0,
+        "traction": 0,
+        "weight": 0
+      },
+      "vehicles": [
+        "STANDARD_KART",
+        "CAT_CRUISER",
+        "PRANCER",
+        "SNEEKER",
+        "THE_DUKE",
+        "TEDDY_BUGGY",
+        "THREE_HUNDRED_SL_ROADSTER"
+      ]
+    },
+    {
+      "name": "B",
+      "stats": {
+        "acceleration": 0.25,
+        "ground_speed": 0,
+        "antigravity_speed": -0.25,
+        "air_speed": 0.25,
+        "water_speed": 0.25,
+        "miniturbo": 0.25,
+        "ground_handling": 0.5,
+        "antigravity_handling": 0.25,
+        "air_handling": 0.5,
+        "water_handling": 0.5,
+        "traction": -0.5,
+        "weight": -0.25
+      },
+      "vehicles": [
+        "PIPE_FRAME",
+        "STANDARD_BIKE",
+        "FLAME_RIDER",
+        "VARMINT",
+        "WILD_WIGGLER",
+        "W_25_SILVER_ARROW",
+        "CITY_TRIPPER"
+      ]
+    },
+    {
+      "name": "C",
+      "stats": {
+        "acceleration": -0.25,
+        "ground_speed": 0.5,
+        "antigravity_speed": -0.25,
+        "air_speed": 0.5,
+        "water_speed": 0.25,
+        "miniturbo": -0.5,
+        "ground_handling": 0,
+        "antigravity_handling": -0.25,
+        "air_handling": 0,
+        "water_handling": 0,
+        "traction": -1,
+        "weight": 0.25
+      },
+      "vehicles": [
+        "MACH_8",
+        "CIRCUIT_SPECIAL",
+        "SPORTS_COUPE",
+        "GOLD_STANDARD",
+        "B_DASHER",
+        "P_WING"
+      ]
+    },
+    {
+      "name": "D",
+      "stats": {
+        "acceleration": -0.5,
+        "ground_speed": 0,
+        "antigravity_speed": -0.25,
+        "air_speed": 0,
+        "water_speed": 0.5,
+        "miniturbo": -0.75,
+        "ground_handling": -0.5,
+        "antigravity_handling": -0.75,
+        "air_handling": 0.25,
+        "water_handling": 0.75,
+        "traction": 0.5,
+        "weight": 0.5
+      },
+      "vehicles": [
+        "STEEL_DRIVER",
+        "TRI_SPEEDER",
+        "BADWAGON",
+        "STANDARD_ATV",
+        "GLA"
+      ]
+    },
+    {
+      "name": "E",
+      "stats": {
+        "acceleration": 1.25,
+        "ground_speed": -0.75,
+        "antigravity_speed": -1,
+        "air_speed": 0.5,
+        "water_speed": 0.5,
+        "miniturbo": 1,
+        "ground_handling": -0.5,
+        "antigravity_handling": 0.75,
+        "air_handling": 0.75,
+        "water_handling": 0.5,
+        "traction": -0.25,
+        "weight": -0.5
+      },
+      "vehicles": [
+        "BIDDYBUGGY",
+        "LANDSHIP",
+        "MR_SCOOTY"
+      ]
+    },
+    {
+      "name": "F",
+      "stats": {
+        "acceleration": 0.75,
+        "ground_speed": 0,
+        "antigravity_speed": -0.25,
+        "air_speed": 0,
+        "water_speed": 0,
+        "miniturbo": 0.5,
+        "ground_handling": 0.75,
+        "antigravity_handling": 0.5,
+        "air_handling": 0.75,
+        "water_handling": 0.75,
+        "traction": -1.25,
+        "weight": -0.25,
+        "inner_drift": true
+      },
+      "vehicles": [
+        "COMET",
+        "SPORT_BIKE",
+        "JET_BIKE",
+        "YOSHI_BIKE"
+      ]
+    },
+    {
+      "name": "G",
+      "stats": {
+        "acceleration": 0.25,
+        "ground_speed": 0.25,
+        "antigravity_speed": 0.25,
+        "air_speed": 0.25,
+        "water_speed": 0,
+        "miniturbo": 0.25,
+        "ground_handling": 0,
+        "antigravity_handling": 0,
+        "air_handling": 0,
+        "water_handling": 0,
+        "traction": -0.5,
+        "weight": -0.25,
+        "inner_drift": true
+      },
+      "vehicles": [
+        "MASTER_CYCLE"
+      ]
+    },
+    {
+      "name": "H",
+      "stats": {
+        "acceleration": 0.25,
+        "ground_speed": 0.25,
+        "antigravity_speed": 0.25,
+        "air_speed": 0.25,
+        "water_speed": 0,
+        "miniturbo": 0.25,
+        "ground_handling": 0,
+        "antigravity_handling": 0,
+        "air_handling": 0,
+        "water_handling": 0,
+        "traction": -0.5,
+        "weight": -0.25
+      },
+      "vehicles": [
+        "BLUE_FALCON",
+        "STREETLE"
+      ]
+    },
+    {
+      "name": "I",
+      "stats": {
+        "acceleration": -0.25,
+        "ground_speed": 0,
+        "antigravity_speed": -0.25,
+        "air_speed": 0.25,
+        "water_speed": 0.5,
+        "miniturbo": -0.5,
+        "ground_handling": -0.25,
+        "antigravity_handling": 0.5,
+        "air_handling": 0.25,
+        "water_handling": 0.5,
+        "traction": 0.25,
+        "weight": 0.25
+      },
+      "vehicles": [
+        "TANOOKI_KART",
+        "BONE_RATTLER"
+      ]
+    }
+  ],
+  "tire_groups": [
+    {
+      "name": "A",
+      "stats": {
+        "acceleration": 0,
+        "ground_speed": 0,
+        "antigravity_speed": 0,
+        "air_speed": 0,
+        "water_speed": 0,
+        "miniturbo": 0,
+        "ground_handling": 0,
+        "antigravity_handling": 0,
+        "air_handling": 0,
+        "water_handling": 0,
+        "traction": 0,
+        "weight": 0
+      },
+      "tires": [
+        "STANDARD",
+        "OFF_ROAD",
+        "BLUE_STANDARD",
+        "RETRO_OFF_ROAD",
+        "GLA_TIRES"
+      ]
+    },
+    {
+      "name": "B",
+      "stats": {
+        "acceleration": -0.5,
+        "ground_speed": 0,
+        "antigravity_speed": 0,
+        "air_speed": -0.5,
+        "water_speed": -0.5,
+        "miniturbo": 0,
+        "ground_handling": -0.75,
+        "antigravity_handling": -0.75,
+        "air_handling": -0.75,
+        "water_handling": -0.75,
+        "traction": 0.75,
+        "weight": 0.5
+      },
+      "tires": [
+        "MONSTER",
+        "HOT_MONSTER"
+      ]
+    },
+    {
+      "name": "C",
+      "stats": {
+        "acceleration": 1,
+        "ground_speed": -0.5,
+        "antigravity_speed": -0.5,
+        "air_speed": 0.5,
+        "water_speed": 0,
+        "miniturbo": 1.5,
+        "ground_handling": 0.25,
+        "antigravity_handling": 0.25,
+        "air_handling": 0.25,
+        "water_handling": 0.25,
+        "traction": -0.25,
+        "weight": -0.5
+      },
+      "tires": [
+        "ROLLER",
+        "BUTTON",
+        "AZURE_ROLLER",
+        "LEAF_TIRES"
+      ]
+    },
+    {
+      "name": "D",
+      "stats": {
+        "acceleration": -0.25,
+        "ground_speed": 0.25,
+        "antigravity_speed": 0.25,
+        "air_speed": 0.25,
+        "water_speed": -0.25,
+        "miniturbo": 0.25,
+        "ground_handling": 0.25,
+        "antigravity_handling": 0.25,
+        "air_handling": 0.25,
+        "water_handling": 0.25,
+        "traction": -0.5,
+        "weight": 0
+      },
+      "tires": [
+        "SLIM",
+        "CRIMSON_SLIM",
+        "TRIFORCE_TIRES"
+      ]
+    },
+    {
+      "name": "E",
+      "stats": {
+        "acceleration": -0.25,
+        "ground_speed": 0.5,
+        "antigravity_speed": 0.5,
+        "air_speed": 0.5,
+        "water_speed": -1,
+        "miniturbo": 0.25,
+        "ground_handling": 0,
+        "antigravity_handling": 0,
+        "air_handling": 0,
+        "water_handling": 0,
+        "traction": -1,
+        "weight": 0.25
+      },
+      "tires": [
+        "SLICK",
+        "CYBER_SLICK"
+      ]
+    },
+    {
+      "name": "F",
+      "stats": {
+        "acceleration": -0.5,
+        "ground_speed": 0.25,
+        "antigravity_speed": 0.25,
+        "air_speed": 0.25,
+        "water_speed": 0.25,
+        "miniturbo": 0,
+        "ground_handling": 0,
+        "antigravity_handling": 0,
+        "air_handling": 0,
+        "water_handling": 0,
+        "traction": -0.5,
+        "weight": 0.5
+      },
+      "tires": [
+        "METAL",
+        "GOLD_TIRES"
+      ]
+    },
+    {
+      "name": "G",
+      "stats": {
+        "acceleration": -0.5,
+        "ground_speed": 0.25,
+        "antigravity_speed": 0.25,
+        "air_speed": 0.25,
+        "water_speed": 0.25,
+        "miniturbo": 0,
+        "ground_handling": 0,
+        "antigravity_handling": 0,
+        "air_handling": 0,
+        "water_handling": 0,
+        "traction": -0.5,
+        "weight": 0.5
+      },
+      "tires": [
+        "SPONGE",
+        "WOOD",
+        "CUSHION"
+      ]
+    }
+  ],
+  "glider_groups": [
+    {
+      "name": "A",
+      "stats": {
+        "acceleration": 0,
+        "ground_speed": 0,
+        "antigravity_speed": 0,
+        "air_speed": 0,
+        "water_speed": 0,
+        "miniturbo": 0,
+        "ground_handling": 0,
+        "antigravity_handling": 0,
+        "air_handling": 0,
+        "water_handling": 0,
+        "traction": 0,
+        "weight": 0
+      },
+      "gliders": [
+        "SUPER_GLIDER",
+        "WARIO_WING",
+        "WADDLE_WING",
+        "PLANE_GLIDER",
+        "GOLD_GLIDER",
+        "PAPER_GLIDER"
+      ]
+    },
+    {
+      "name": "B",
+      "stats": {
+        "acceleration": 0.25,
+        "ground_speed": 0,
+        "antigravity_speed": 0,
+        "air_speed": -0.25,
+        "water_speed": 0,
+        "miniturbo": 0.25,
+        "ground_handling": 0,
+        "antigravity_handling": 0,
+        "air_handling": 0.25,
+        "water_handling": 0,
+        "traction": 0,
+        "weight": -0.25
+      },
+      "gliders": [
+        "CLOUD_GLIDER",
+        "PEACH_PARASOL",
+        "PARACHUTE",
+        "PARAFOIL",
+        "FLOWER_GLIDER",
+        "BOWSER_KITE",
+        "MKTV_PARAFOIL",
+        "HYLIAN_KITE"
+      ]
+    }
+  ]
+}

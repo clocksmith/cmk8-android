@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,8 @@ import com.blunka.mk8assistant.R;
 import com.blunka.mk8assistant.analytics.AnalyticsFragment;
 import com.blunka.mk8assistant.analytics.AnalyticsFragmentActivity;
 import com.blunka.mk8assistant.analytics.AnalyticsUtils;
+import com.blunka.mk8assistant.data.courses.CourseData;
+import com.blunka.mk8assistant.data.parts.PartData;
 import com.blunka.mk8assistant.main.adjust.AdjustToBuildConverter;
 import com.blunka.mk8assistant.main.configure.ConfigureModel;
 import com.blunka.mk8assistant.main.configure.ConfigureFragment;
@@ -329,8 +332,10 @@ public class MainActivity extends AnalyticsFragmentActivity implements Configure
 
       mPackageName = MainActivity.this.getApplicationContext().getPackageName();
 
+      Intent serviceIntent = new Intent("com.android.vending.billing.InAppBillingService.BIND");
+      serviceIntent.setPackage("com.android.vending");
       MainActivity.this.bindService(
-          new Intent("com.android.vending.billing.InAppBillingService.BIND"),
+          serviceIntent,
           mServiceConnection,
           Context.BIND_AUTO_CREATE);
     }

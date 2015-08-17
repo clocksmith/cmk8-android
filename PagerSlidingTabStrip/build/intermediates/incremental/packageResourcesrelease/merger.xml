@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/res"><file name="background_tab" path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/res/drawable/background_tab.xml" qualifiers="" type="drawable"/><file path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/res/values/attrs.xml" qualifiers=""><declare-styleable name="PagerSlidingTabStrip">
+        <attr format="color" name="pstIndicatorColor"/>
+        <attr format="color" name="pstUnderlineColor"/>
+        <attr format="color" name="pstDividerColor"/>
+        <attr format="dimension" name="pstIndicatorHeight"/>
+        <attr format="dimension" name="pstUnderlineHeight"/>
+        <attr format="dimension" name="pstDividerPadding"/>
+        <attr format="dimension" name="pstTabPaddingLeftRight"/>
+        <attr format="dimension" name="pstScrollOffset"/>
+        <attr format="reference" name="pstTabBackground"/>
+        <attr format="boolean" name="pstShouldExpand"/>
+        <attr format="boolean" name="pstTextAllCaps"/>
+    </declare-styleable></file><file path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/res/values/colors.xml" qualifiers=""><color name="background_tab_pressed">#6633B5E5</color></file></source><source path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/build/generated/res/rs/release"/><source path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/build/generated/res/resValues/release"/></dataSet><dataSet config="release"><source path="/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/src/release/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="PagerSlidingTabStrip"><attr format="color" name="pstIndicatorColor"/><attr format="color" name="pstUnderlineColor"/><attr format="color" name="pstDividerColor"/><attr format="dimension" name="pstIndicatorHeight"/><attr format="dimension" name="pstUnderlineHeight"/><attr format="dimension" name="pstDividerPadding"/><attr format="dimension" name="pstTabPaddingLeftRight"/><attr format="dimension" name="pstScrollOffset"/><attr format="reference" name="pstTabBackground"/><attr format="boolean" name="pstShouldExpand"/><attr format="boolean" name="pstTextAllCaps"/></declare-styleable></configuration></mergedItems></merger>

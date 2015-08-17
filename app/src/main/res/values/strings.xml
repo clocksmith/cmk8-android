@@ -51,7 +51,9 @@
   <!-- Character Groups -->
   <string name="flyweight">Flyweight</string>
   <string name="featherweight">Featherweight</string>
+  <string name="catweight">Catweight</string>
   <string name="lightweight">Lightweight</string>
+  <string name="tanookiweight">Tanookiweight</string>
   <string name="middleweight">Middleweight</string>
   <string name="cruiserweight">Cruiserweight</string>
   <string name="metalweight">Metalweight</string>
@@ -75,11 +77,20 @@
   <string name="toadette">Toadette</string>
   <string name="larry">Larry</string>
   <string name="wendy">Wendy</string>
+  <string name="isabelle">Isabelle</string>
+
+  <!-- Catweights -->
+  <string name="cat_peach">Cat Peach</string>
+  <string name="villager_female">Villager Female</string>
 
   <!-- Lightweights -->
   <string name="peach">Peach</string>
   <string name="daisy">Daisy</string>
   <string name="yoshi">Yoshi</string>
+
+  <!-- Tanookiweights -->
+  <string name="tanooki_mario">Tanooki Mario</string>
+  <string name="villager_male">Villager Male</string>
 
   <!-- Middleweights -->
   <string name="mario">Mario</string>
@@ -92,6 +103,7 @@
   <string name="waluigi">Waluigi</string>
   <string name="rosalina">Rosalina</string>
   <string name="roy">Roy</string>
+  <string name="link">Link</string>
 
   <!-- Metalweights -->
   <string name="metal_mario">Metal Mario</string>
@@ -101,6 +113,7 @@
   <string name="bowser">Bowser</string>
   <string name="wario">Wario</string>
   <string name="morton">Morton</string>
+  <string name="dry_bowser">Dry Bowser</string>
 
   <!-- Vehicle Groups -->
   <string name="vehicle_a">Vehicle A</string>
@@ -109,6 +122,64 @@
   <string name="vehicle_d">Vehicle D</string>
   <string name="vehicle_e">Vehicle E</string>
   <string name="vehicle_f">Vehicle F</string>
+  <string name="vehicle_g">Vehicle G</string>
+  <string name="vehicle_h">Vehicle H</string>
+
+  <!-- Vehicle Group A -->
+  <string name="standard_kart">Standard Kart</string>
+  <string name="cat_cruiser">Cat Cruiser</string>
+  <string name="prancer">Prancer</string>
+  <string name="sneeker">Sneeker</string>
+  <string name="the_duke">The Duke</string>
+  <string name="teddy_buggy">Teddy Buggy</string>
+  <string name="three_hundred_sl_roadster">300 SL Roadster</string>
+
+  <!-- Vehicle Group B -->
+  <string name="pipe_frame">Pipe Frame</string>
+  <string name="standard_bike">Standard Bike</string>
+  <string name="flame_rider">Flame Rider</string>
+  <string name="varmint">Varmint</string>
+  <string name="wild_wiggler">Wild Wiggler</string>
+  <string name="w_25_silver_arrow">W 25 Silver Arrow</string>
+  <string name="city_tripper">City Tripper</string>
+
+  <!-- Vehicle Group C -->
+  <string name="mach_8">Mach 8</string>
+  <string name="circuit_special">Circuit Special</string>
+  <string name="sports_coupe">Sports Coupe</string>
+  <string name="gold_standard">Gold Standard</string>
+  <string name="b_dasher">B Dasher</string>
+  <string name="p_wing">P-Wing</string>
+
+  <!-- Vehicle Group D -->
+  <string name="steel_driver">Steel Driver</string>
+  <string name="tri_speeder">Tri-Speeder</string>
+  <string name="badwagon">Badwagon</string>
+  <string name="standard_atv">Standard ATV</string>
+  <string name="gla">GLA</string>
+
+  <!-- Vehicle Group E -->
+  <string name="biddybuggy">Biddybuggy</string>
+  <string name="landship">Landship</string>
+  <string name="mr_scooty">Mr. Scooty</string>
+
+  <!-- Vehicle Group F -->
+  <string name="comet">Comet</string>
+  <string name="sport_bike">Sport Bike</string>
+  <string name="jet_bike">Jet Bike</string>
+  <string name="yoshi_bike">Yoshi Bike</string>
+
+
+  <!-- Vehicle Group G -->
+  <string name="master_cycle">Master Cycle</string>
+
+  <!-- Vehicle Group H -->
+  <string name="blue_falcon">Blue Falcon</string>
+  <string name="streetle">Streetle</string>
+
+  <!-- Vehicle Group I -->
+  <string name="tanooki_kart">Tanooki Kart</string>
+  <string name="bone_rattler">Bone Rattler</string>
 
   <!-- Tire Groups -->
   <string name="tire_a">Tire A</string>
@@ -119,9 +190,62 @@
   <string name="tire_f">Tire F</string>
   <string name="tire_g">Tire G</string>
 
+  <!-- Tire Group A -->
+  <string name="standard">Standard</string>
+  <string name="off_road">Off-Road</string>
+  <string name="blue_standard">Blue Standard</string>
+  <string name="retro_off_road">Retro Off-Road</string>
+  <string name="gla_tires">GLA Tires</string>
+
+  <!-- Tire Group B -->
+  <string name="monster">Monster</string>
+  <string name="hot_monster">Hot Monster</string>
+
+  <!-- Tire Group C -->
+  <string name="roller">Roller</string>
+  <string name="button">Button</string>
+  <string name="azure_roller">Azure Roller</string>
+  <string name="leaf_tires">Leaf Tires</string>
+
+  <!-- Tire Group D -->
+  <string name="slim">Slim</string>
+  <string name="crimson_slim">Crimson Slim</string>
+  <string name="triforce_tires">Triforce Tires</string>
+
+  <!-- Tire Group E -->
+  <string name="slick">Slick</string>
+  <string name="cyber_slick">Cyber Slick</string>
+
+  <!-- Tire Group F -->
+  <string name="metal">Metal</string>
+  <string name="gold_tires">Gold Tires</string>
+
+  <!-- Tire Group G -->
+  <string name="sponge">Sponge</string>
+  <string name="wood">Wood</string>
+  <string name="cushion">Cusion</string>
+
   <!-- Glider Groups -->
   <string name="glider_a">Glider A</string>
   <string name="glider_b">Glider B</string>
+
+  <!-- Glider Group A -->
+  <string name="super_glider">Super Glider</string>
+  <string name="wario_wing">Wario Wing</string>
+  <string name="waddle_wing">Waddle Wing</string>
+  <string name="plane_glider">Plane Glider</string>
+  <string name="gold_glider">Gold Glider</string>
+  <string name="paper_glider">Paper Glider</string>
+
+  <!-- Glider Group B -->
+  <string name="cloud_glider">Cloud Glider</string>
+  <string name="peach_parasol">Peach Parasol</string>
+  <string name="parachute">Parachute</string>
+  <string name="parafoil">Parafoil</string>
+  <string name="flower_glider">Flower Glider</string>
+  <string name="bowser_kite">Bowser Kite</string>
+  <string name="mktv_parafoil">MKTV Parafoil</string>
+  <string name="hylian_kite">Hylian Kite</string>
 
   <!-- Cups -->
   <string name="mushroom_cup">Mushroom Cup</string>
@@ -132,6 +256,10 @@
   <string name="banana_cup">Banana Cup</string>
   <string name="leaf_cup">Leaf Cup</string>
   <string name="lightning_cup">Lightning Cup</string>
+  <string name="egg_cup">Egg Cup</string>
+  <string name="triforce_cup">Triforce Cup</string>
+  <string name="crossing_cup">Crossing Cup</string>
+  <string name="bell_cup">Bell Cup</string>
 
   <!-- Courses -->
 

@@ -1,8 +1,9 @@
 package com.blunka.mk8assistant.data.courses;
 
 import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-import com.blunka.mk8assistant.R;
 import com.blunka.mk8assistant.data.HasDisplayNameAndIcon;
 import com.google.common.collect.Lists;
 
@@ -10,88 +11,82 @@ import java.util.List;
 
 /**
  * Created by clocksmith on 9/7/14.
+ *
+ * This is really a "CourseGroup"
  */
-public enum Cup implements HasDisplayNameAndIcon {
-  MUSHROOM(R.string.mushroom_cup,
-      R.drawable.wiiu_cup_mushroom,
-      Lists.newArrayList(
-          Course.MARIO_KART_STADIUM,
-          Course.WATER_PARK,
-          Course.SWEET_SWEET_CANYON,
-          Course.THWOMP_RUINS)),
-  FLOWER(R.string.flower_cup,
-      R.drawable.wiiu_cup_flower,
-      Lists.newArrayList(
-          Course.MARIO_CIRCUIT,
-          Course.TOAD_HARBOR,
-          Course.TWISTED_MANSION,
-          Course.SHY_GUY_FALLS)),
-  STAR(R.string.star_cup,
-      R.drawable.wiiu_cup_star,
-      Lists.newArrayList(
-          Course.SUNSHINE_AIRPORT,
-          Course.DOLPHIN_SHOALS,
-          Course.ELECTRODROME,
-          Course.MOUNT_WARIO)),
-  SPECIAL(R.string.special_cup,
-      R.drawable.wiiu_cup_special,
-      Lists.newArrayList(
-          Course.CLOUDTOP_CRUISE,
-          Course.BONE_DRY_DUNES,
-          Course.BOWSERS_CASTLE,
-          Course.RAINBOW_ROAD)),
-  SHELL(R.string.shell_cup,
-      R.drawable.wiiu_cup_shell,
-      Lists.newArrayList(
-          Course.MOO_MOO_MEADOWS,
-          Course.MARIO_CIRCUIT_GBA,
-          Course.CHEEP_CHEEP_BEACH,
-          Course.TOADS_TURNPIKE)),
-  BANANA(R.string.banana_cup,
-      R.drawable.wiiu_cup_banana,
-      Lists.newArrayList(
-          Course.DRY_DRY_DESERT,
-          Course.DONUT_PLAINS_3,
-          Course.ROYAL_RACEWAY,
-          Course.DK_JUNGLE)),
-  LEAF(R.string.leaf_cup,
-      R.drawable.wiiu_cup_leaf,
-      Lists.newArrayList(
-          Course.WARIO_STADIUM,
-          Course.SHERBET_LAND,
-          Course.MUSIC_PARK,
-          Course.YOSHI_VALLEY)),
-  LIGHTNING(R.string.lightning_cup,
-      R.drawable.wiiu_cup_lightning,
-      Lists.newArrayList(
-          Course.TICK_TOCK_CLOCK,
-          Course.PIRANHA_PLANT_SLIDE,
-          Course.GRUMBLE_VOLCANO,
-          Course.RAINBOW_ROAD_N64));
-
-  private int mDisplayNameResourceId;
-  private int mIconResourceId;
+public class Cup implements Parcelable, HasDisplayNameAndIcon {
+  private String mName;
+  private String mDisplayName;
+  private int mIconResId;
   private List<Course> mCourses;
+  private int mIndex;
 
-  Cup(int displayNameResourceId, int iconResourceId, List<Course> courses) {
-    mDisplayNameResourceId = displayNameResourceId;
-    mIconResourceId = iconResourceId;
+  public Cup(Context context, String name, List<Course> courses, int index) {
+    mName = name;
+    mDisplayName = context.getString(context.getResources().getIdentifier(
+        name.toLowerCase() + "_cup",
+        "string",
+        context.getPackageName()));
+    mIconResId = context.getResources().getIdentifier(
+        "wiiu_cup_" + name.toLowerCase(),
+        "drawable",
+        context.getPackageName());
     mCourses = courses;
+    mIndex = index;
   }
 
-  public String getDisplayName(Context context) {
-    return context.getString(mDisplayNameResourceId);
+  public String getName() {
+    return mName;
   }
 
-  public int getDisplayNameResourceId() {
-    return mDisplayNameResourceId;
+  @Override
+  public String getDisplayName() {
+    return mDisplayName;
   }
 
-  public int getIconResourceId() {
-    return mIconResourceId;
+  @Override
+  public int getIconResId() {
+    return mIconResId;
   }
 
   public List<Course> getCourses() {
     return mCourses;
   }
+
+  public int getIndex() {
+    return mIndex;
+  }
+
+  public Cup(Parcel in) {
+    mName = in.readString();
+    mDisplayName = in.readString();
+    mIconResId = in.readInt();
+    mCourses = Lists.newArrayList((Course[]) in.readParcelableArray(Course.class.getClassLoader()));
+    mIndex = in.readInt();
+  }
+
+  @Override
+  public void writeToParcel(Parcel out, int flags) {
+    out.writeString(mName);
+    out.writeString(mDisplayName);
+    out.writeInt(mIconResId);
+    out.writeParcelableArray((Parcelable[]) mCourses.toArray(), flags);
+    out.writeInt(mIndex);
+  }
+
+  @Override
+  public int describeContents() {
+    return 0;
+  }
+
+  public static final Parcelable.Creator<Cup> CREATOR =
+      new Parcelable.Creator<Cup>() {
+        public Cup createFromParcel(Parcel in) {
+          return new Cup(in);
+        }
+
+        public Cup[] newArray(int size) {
+          return new Cup[size];
+        }
+      };
 }

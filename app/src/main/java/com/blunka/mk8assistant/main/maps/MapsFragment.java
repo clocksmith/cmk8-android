@@ -15,6 +15,8 @@ import android.widget.Spinner;
 import com.blunka.mk8assistant.R;
 import com.blunka.mk8assistant.analytics.AnalyticsFragment;
 import com.blunka.mk8assistant.data.courses.Course;
+import com.blunka.mk8assistant.data.courses.CourseData;
+import com.blunka.mk8assistant.data.courses.CourseUtils;
 import com.blunka.mk8assistant.data.courses.Cup;
 import com.blunka.mk8assistant.shared.ArgKeys;
 import com.blunka.mk8assistant.shared.Constants;
@@ -122,7 +124,7 @@ public class MapsFragment extends AnalyticsFragment {
     mMapViewPageChangeListener = new MapViewPageChangeListener();
     mMapViewPager.setOnPageChangeListener(mMapViewPageChangeListener);
 
-    mMapViewPager.setCurrentItem(mMapsModel.getCourse().ordinal(), false);
+    mMapViewPager.setCurrentItem(mMapsModel.getCourse().getIndex(), false);
 
     // Update triangles.
     updateTriangles();
@@ -181,10 +183,10 @@ public class MapsFragment extends AnalyticsFragment {
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
       if (!mIsSilent) {
-        Cup cup = Cup.values()[position];
+        Cup cup = CourseData.CUPS.get(position);
         mCourseSpinnerAdapter.updateObjects(cup.getCourses());
         setCourseSelectionSilently(0);
-        setCurrentMapItemSilently(((Course) mCourseSpinner.getSelectedItem()).ordinal(), true);
+        setCurrentMapItemSilently(((Course) mCourseSpinner.getSelectedItem()).getIndex(), true);
         mMapsModel.setCup(cup);
         mMapsModel.setCourse(cup.getCourses().get(0));
         if (mListener != null) {
@@ -212,7 +214,7 @@ public class MapsFragment extends AnalyticsFragment {
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
       if (!mIsSilent) {
         Course course = ((Course) mCourseSpinner.getSelectedItem());
-        setCurrentMapItemSilently(course.ordinal(), true);
+        setCurrentMapItemSilently(course.getIndex(), true);
         mMapsModel.setCourse(course);
         if (mListener != null) {
           mListener.onMapsModelUpdated(mMapsModel);
@@ -243,10 +245,10 @@ public class MapsFragment extends AnalyticsFragment {
         int cupIndex = position / NUM_COURSES_PER_CUP;
         int courseIndex = position % NUM_COURSES_PER_CUP;
         setCupSelectionSilently(cupIndex);
-        mCourseSpinnerAdapter.updateObjects(Cup.values()[cupIndex].getCourses());
+        mCourseSpinnerAdapter.updateObjects(CourseData.CUPS.get(cupIndex).getCourses());
         setCourseSelectionSilently(courseIndex);
-        mMapsModel.setCup(Cup.values()[cupIndex]);
-        mMapsModel.setCourse(Course.values()[courseIndex]);
+        mMapsModel.setCup(CourseData.CUPS.get(cupIndex));
+        mMapsModel.setCourse(CourseData.CUPS.get(cupIndex).getCourses().get(courseIndex));
         if (mListener != null) {
           mListener.onMapsModelUpdated(mMapsModel);
         }

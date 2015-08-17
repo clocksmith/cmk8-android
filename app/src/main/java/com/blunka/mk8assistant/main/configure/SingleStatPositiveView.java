@@ -53,8 +53,8 @@ public class SingleStatPositiveView extends SingleStatSingleValueView {
   }
 
   @Override
-  public void updateValue(float newValue) {
-    float originalValue = mNewValue;
+  public void updateValue(double newValue) {
+    double originalValue = mNewValue;
     mNewValue = newValue;
     mValueLabel.setText(mDecimalFormat.format(mNewValue));
     if (mOnGlobalLayoutListenerCalled) {

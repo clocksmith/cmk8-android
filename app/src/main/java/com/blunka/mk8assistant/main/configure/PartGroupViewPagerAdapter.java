@@ -5,6 +5,7 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.blunka.mk8assistant.data.parts.Part;
 import com.blunka.mk8assistant.data.parts.PartGroup;
 import com.blunka.mk8assistant.shared.FilteredLogger;
 import com.blunka.mk8assistant.shared.ui.UiUtils;
@@ -21,10 +22,9 @@ public class PartGroupViewPagerAdapter extends PagerAdapter {
   private Context mContext;
   private List<PartGroup> mPartGroupValues;
 
-  public PartGroupViewPagerAdapter(Context context,
-      Class<? extends PartGroup> partGroupClass) {
+  public PartGroupViewPagerAdapter(Context context, List<PartGroup> partGroups) {
     mContext = context;
-    mPartGroupValues = Lists.newArrayList((PartGroup[]) partGroupClass.getEnumConstants());
+    mPartGroupValues = partGroups;
   }
 
   @Override

@@ -7,7 +7,7 @@ import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
 
 import com.blunka.mk8assistant.R;
-import com.blunka.mk8assistant.data.HasDisplayNameAndIcon;
+import com.blunka.mk8assistant.data.parts.Part;
 import com.blunka.mk8assistant.data.parts.PartGroup;
 import com.blunka.mk8assistant.main.configure.PartView;
 import com.blunka.mk8assistant.shared.Constants;
@@ -25,8 +25,6 @@ public class CondensedPartGroupView extends LinearLayout {
 
   public CondensedPartGroupView(final Context context, final PartGroup partGroup) {
     super(context);
-    FilteredLogger.d(TAG, "CondensedPartGroupView(partGroup: " +
-        partGroup.getDisplayGroupName(context) + ")");
 
     LayoutInflater layoutInflater = (LayoutInflater)
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -63,7 +61,7 @@ public class CondensedPartGroupView extends LinearLayout {
     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(partDimension,
         partDimension);
     layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
-    for (HasDisplayNameAndIcon part : partGroup.getParts()) {
+    for (Part part : partGroup.getParts()) {
       PartView partView = new PartView(context, part, partDimension, partDimension);
       mContainer.addView(partView, layoutParams);
     }

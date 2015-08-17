@@ -1,5 +1,7 @@
 package com.blunka.mk8assistant.data.courses;
 
+import com.blunka.mk8assistant.shared.Constants;
+
 /**
  * Created by clocksmith on 9/8/14.
  *
@@ -7,20 +9,12 @@ package com.blunka.mk8assistant.data.courses;
  */
 public class CourseUtils {
   public static Cup getCup(Course course) {
-    for (Cup cup : Cup.values()) {
-      if (cup.getCourses().contains(course)) {
-        return cup;
-      }
-    }
-    return null;
+    return CourseData.CUPS.get(course.getIndex() / Constants.NUM_COURSES_IN_CUP);
   }
 
-  public static int getPositionOfCourseInCup(Course course) {
-    for (Cup cup : Cup.values()) {
-      if (cup.getCourses().contains(course)) {
-        return cup.getCourses().indexOf(course);
-      }
-    }
-    return -1;
+  public static Course getCourse(int position) {
+    return CourseData.CUPS.get(position / Constants.NUM_COURSES_IN_CUP)
+        .getCourses().get(position % Constants.NUM_COURSES_IN_CUP);
   }
+
 }

@@ -2,6 +2,7 @@ package com.blunka.mk8assistant.shared.preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.blunka.mk8assistant.main.adjust.AdjustModel;
 import com.blunka.mk8assistant.main.configure.ConfigureModel;
@@ -10,6 +11,9 @@ import com.blunka.mk8assistant.main.maps.MapsModel;
 import com.blunka.mk8assistant.shared.FilteredLogger;
 import com.blunka.mk8assistant.shared.Model;
 import com.google.gson.GsonBuilder;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by clocksmith on 7/18/14.
@@ -44,7 +48,8 @@ public class LastUsedModelUtils {
     if (mapsModel == null) {
       FilteredLogger.d(TAG, "mapsModel is null");
     } else {
-      FilteredLogger.d(TAG, "getLastUsedMapsModel cup: " + mapsModel.getCup().name() + " course: " + mapsModel.getCourse().name());
+      FilteredLogger.d(TAG, "getLastUsedMapsModel cup: " + mapsModel.getCup().getName()
+          + " course: " + mapsModel.getCourse().getName());
     }
     return (MapsModel) getLastUsedModel(context, LAST_USED_MAPS_MODEL_KEY);
   }
@@ -62,14 +67,18 @@ public class LastUsedModelUtils {
   }
 
   public static void setLastUsedMapsModel(Context context, MapsModel mapsModel) {
-    FilteredLogger.d(TAG, "setLastUsedMapsModel cup: " + mapsModel.getCup().name() + " course: " + mapsModel.getCourse().name());
+    FilteredLogger.d(TAG, "setLastUsedMapsModel cup: " + mapsModel.getCup().getName()
+        + " course: " + mapsModel.getCourse().getName());
     setLastUsedModel(context, mapsModel);
   }
 
   private static Model getLastUsedModel(Context context, String modelKey) {
     String jsonString = getPreferences(context).getString(modelKey, "");
-    return jsonString.equals("") ? null :
-        (Model) new GsonBuilder().create().fromJson(jsonString, getClassForKey(modelKey));
+    Log.d(TAG, "getLastUsedModel jsonString: " + jsonString);
+    // Temp fix because we can't easily convert the json to a legacy class.
+    return null;
+//    return jsonString.equals("") ? null :
+//        (Model) new GsonBuilder().create().fromJson(jsonString, getClassForKey(modelKey));
   }
 
   private static void setLastUsedModel(Context context, Model model) {

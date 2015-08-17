@@ -16,11 +16,9 @@ import com.blunka.mk8assistant.R;
 import com.blunka.mk8assistant.analytics.AnalyticsFragment;
 import com.blunka.mk8assistant.analytics.AnalyticsUtils;
 import com.blunka.mk8assistant.data.KartConfiguration;
-import com.blunka.mk8assistant.data.parts.CharacterGroup;
-import com.blunka.mk8assistant.data.parts.GliderGroup;
+import com.blunka.mk8assistant.data.parts.Part;
+import com.blunka.mk8assistant.data.parts.PartData;
 import com.blunka.mk8assistant.data.parts.PartGroup;
-import com.blunka.mk8assistant.data.parts.TireGroup;
-import com.blunka.mk8assistant.data.parts.VehicleGroup;
 import com.blunka.mk8assistant.main.adjust.AdjustActivity;
 import com.blunka.mk8assistant.shared.ArgKeys;
 import com.blunka.mk8assistant.shared.Constants;
@@ -215,16 +213,16 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
 
   @Override
   public void onGroupSwitched(PartGroup partGroup) {
-    FilteredLogger.d(TAG, "onGroupSwitched(partGroup: " +
-        partGroup.getDisplayGroupName(getActivity()) + ")");
-    if (partGroup instanceof CharacterGroup) {
-      mConfigureModel.getKartConfiguration().setCharacterGroup((CharacterGroup) partGroup);
-    } else if (partGroup instanceof VehicleGroup) {
-      mConfigureModel.getKartConfiguration().setVehicleGroup((VehicleGroup) partGroup);
-    } else if (partGroup instanceof TireGroup) {
-      mConfigureModel.getKartConfiguration().setTireGroup((TireGroup) partGroup);
-    } else if (partGroup instanceof GliderGroup) {
-      mConfigureModel.getKartConfiguration().setGliderGroup((GliderGroup) partGroup);
+    FilteredLogger.d(TAG, "onGroupSwitched(partGroup: " + partGroup.getDisplayName() + ")");
+    switch(partGroup.getPartType()) {
+      case CHARACTER:
+        mConfigureModel.getKartConfiguration().setCharacterGroup(partGroup);
+      case VEHICLE:
+        mConfigureModel.getKartConfiguration().setVehicleGroup(partGroup);
+      case TIRE:
+        mConfigureModel.getKartConfiguration().setTireGroup(partGroup);
+      case GLIDER:
+        mConfigureModel.getKartConfiguration().setGliderGroup(partGroup);
     }
 
     updateModel(mConfigureModel);
@@ -235,10 +233,10 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
   }
 
   private void initChoosers() {
-    mCharacterChooser.init(CharacterGroup.class);
-    mVehicleChooser.init(VehicleGroup.class);
-    mTireChooser.init(TireGroup.class);
-    mGliderChooser.init(GliderGroup.class);
+    mCharacterChooser.init(PartData.CHARACTER_GROUPS);
+    mVehicleChooser.init(PartData.VEHICLE_GROUPS);
+    mTireChooser.init(PartData.TIRE_GROUPS);
+    mGliderChooser.init(PartData.GLIDER_GROUPS);
   }
 
   private void updateModel(ConfigureModel configureModel) {

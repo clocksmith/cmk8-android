@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.blunka.mk8assistant.data.courses.Course;
+import com.blunka.mk8assistant.data.courses.CourseData;
+import com.blunka.mk8assistant.data.courses.CourseUtils;
+import com.blunka.mk8assistant.shared.Constants;
 import com.blunka.mk8assistant.shared.FilteredLogger;
 import com.blunka.mk8assistant.shared.ui.ImageUtils;
 import com.blunka.mk8assistant.shared.ui.TouchImageView;
@@ -39,7 +42,7 @@ public class MapViewPagerAdapter extends PagerAdapter {
     FilteredLogger.d(TAG, "instantiateItem(position: " + position + ")");
     TouchImageView mapView = new TouchImageView(mContext);
     Bitmap mapBitmap = ImageUtils.decodeSampledBitmapFromResource(mContext,
-        Course.values()[position].getMapResourceId(),
+        CourseUtils.getCourse(position).getMapResId(),
         Bitmap.Config.RGB_565,
         ACTUAL_DIMENSION_PX,
         ACTUAL_DIMENSION_PX);
@@ -60,7 +63,7 @@ public class MapViewPagerAdapter extends PagerAdapter {
 
   @Override
   public int getCount() {
-    return Course.values().length;
+    return CourseData.CUPS.size() * Constants.NUM_COURSES_IN_CUP;
   }
 
   @Override

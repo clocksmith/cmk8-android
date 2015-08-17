@@ -1,9 +1,7 @@
 package com.blunka.mk8assistant.data;
 
-import com.blunka.mk8assistant.data.parts.CharacterGroup;
-import com.blunka.mk8assistant.data.parts.GliderGroup;
-import com.blunka.mk8assistant.data.parts.TireGroup;
-import com.blunka.mk8assistant.data.parts.VehicleGroup;
+import com.blunka.mk8assistant.data.parts.PartData;
+import com.blunka.mk8assistant.data.parts.PartGroup;
 import com.google.common.collect.Lists;
 
 import java.util.List;
@@ -16,10 +14,10 @@ public class AllKartConfigurations {
 
   public AllKartConfigurations() {
     mKartConfigurations = Lists.newArrayList();
-    for (CharacterGroup characterGroup : CharacterGroup.values()) {
-      for (VehicleGroup vehicleGroup : VehicleGroup.values()) {
-        for (TireGroup tireGroup : TireGroup.values()) {
-          for (GliderGroup gliderGroup : GliderGroup.values()) {
+    for (PartGroup characterGroup : PartData.CHARACTER_GROUPS) {
+      for (PartGroup vehicleGroup : PartData.VEHICLE_GROUPS) {
+        for (PartGroup tireGroup : PartData.TIRE_GROUPS) {
+          for (PartGroup gliderGroup : PartData.GLIDER_GROUPS) {
             mKartConfigurations.add(KartConfiguration.newBuilder()
                 .withCharacterGroup(characterGroup)
                 .withVehicleGroup(vehicleGroup)

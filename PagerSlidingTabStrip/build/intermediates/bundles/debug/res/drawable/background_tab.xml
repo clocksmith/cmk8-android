@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@color/background_tab_pressed"/>
     <item android:drawable="@android:color/transparent"/>
 
-</selector><!-- From: file:/Users/antrob/Google%20Drive/projects/configuremk8-android/PagerSlidingTabStrip/res/drawable/background_tab.xml -->
+</selector><!-- From: file:/Users/antrob/git/cmk8-android/PagerSlidingTabStrip/res/drawable/background_tab.xml -->

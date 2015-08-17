@@ -58,9 +58,9 @@ public class SingleStatMaybeNegativeView extends SingleStatSingleValueView {
           public void onGlobalLayout() {
             UiUtils.removeOnGlobalLayoutListener(mNegativeBarContainer, this);
             mOnGlobalLayoutListenerCalled = true;
-            float maxWidthPx = mNegativeBarContainer.getMeasuredWidth();
-            float negativeBarValue = mNewValue < 0 ? -mNewValue : 0;
-            float positiveBarValue = mNewValue >= 0 ? mNewValue : 0;
+            double maxWidthPx = mNegativeBarContainer.getMeasuredWidth();
+            double negativeBarValue = mNewValue < 0 ? -mNewValue : 0;
+            double positiveBarValue = mNewValue >= 0 ? mNewValue : 0;
             updateBar(mNegativeBarImage, 0, (int) (negativeBarValue / mMaxValue * maxWidthPx));
             updateBar(mPositiveBarImage, 0, (int) (positiveBarValue / mMaxValue * maxWidthPx));
           }
@@ -72,8 +72,8 @@ public class SingleStatMaybeNegativeView extends SingleStatSingleValueView {
   }
 
   @Override
-  public void updateValue(float newValue) {
-    float originalValue = mNewValue;
+  public void updateValue(double newValue) {
+    double originalValue = mNewValue;
     mNewValue = newValue;
     if (mNewValue < 0) {
       showValueLabel(mNegativeValueLabel);
@@ -85,8 +85,8 @@ public class SingleStatMaybeNegativeView extends SingleStatSingleValueView {
       showValueLabel(mZeroLabel);
     }
     if (mOnGlobalLayoutListenerCalled) {
-      float maxNegativeWidthPx = mNegativeBarContainer.getMeasuredWidth();
-      float maxPositiveWidthPx = mPositiveBarContainer.getMeasuredWidth();
+      double maxNegativeWidthPx = mNegativeBarContainer.getMeasuredWidth();
+      double maxPositiveWidthPx = mPositiveBarContainer.getMeasuredWidth();
       FilteredLogger.d(TAG, "maxNegativeWidthPx: " + maxNegativeWidthPx + " maxPositiveWidthPx: " + maxPositiveWidthPx);
       updateBar(mNegativeBarImage,
           (int) (originalValue < 0 ? (-originalValue / mMaxValue * maxNegativeWidthPx) : 0),

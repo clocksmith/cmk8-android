@@ -1,0 +1,112 @@
+{
+  "cups": [
+    {
+      "name": "MUSHROOM",
+      "courses": [
+        "MARIO_KART_STADIUM",
+        "WATER_PARK",
+        "SWEET_SWEET_CANYON",
+        "THWOMP_RUINS"
+      ]
+    },
+    {
+      "name": "FLOWER",
+      "courses": [
+        "MARIO_CIRCUIT",
+        "TOAD_HARBOR",
+        "TWISTED_MANSION",
+        "SHY_GUY_FALLS"
+      ]
+    },
+    {
+      "name": "STAR",
+      "courses": [
+        "SUNSHINE_AIRPORT",
+        "DOLPHIN_SHOALS",
+        "ELECTRODROME",
+        "MOUNT_WARIO"
+      ]
+    },
+    {
+      "name": "SPECIAL",
+      "courses": [
+        "CLOUDTOP_CRUISE",
+        "BONE_DRY_DUNES",
+        "BOWSERS_CASTLE",
+        "RAINBOW_ROAD"
+      ]
+    },
+    {
+      "name": "SHELL",
+      "courses": [
+        "MOO_MOO_MEADOWS",
+        "MARIO_CIRCUIT_GBA",
+        "CHEEP_CHEEP_BEACH",
+        "TOADS_TURNPIKE"
+      ]
+    },
+    {
+      "name": "BANANA",
+      "courses": [
+        "DRY_DRY_DESERT",
+        "DONUT_PLAINS_3",
+        "ROYAL_RACEWAY",
+        "DK_JUNGLE"
+      ]
+    },
+    {
+      "name": "LEAF",
+      "courses": [
+        "WARIO_STADIUM",
+        "SHERBET_LAND",
+        "MUSIC_PARK",
+        "YOSHI_VALLEY"
+      ]
+    },
+    {
+      "name": "LIGHTNING",
+      "courses": [
+        "TICK_TOCK_CLOCK",
+        "PIRANHA_PLANT_SLIDE",
+        "GRUMBLE_VOLCANO",
+        "RAINBOW_ROAD_N64"
+      ]
+    },
+    {
+      "name": "EGG",
+      "courses": [
+        "YOSHI_CIRCUIT",
+        "EXCITEBIKE_ARENA",
+        "DRAGON_DRIFTWAY",
+        "MUTE_CITY"
+      ]
+    },
+    {
+      "name": "TRIFORCE",
+      "courses": [
+        "WARIOS_GOLD_MINE",
+        "RAINBOW_ROAD_SNES",
+        "ICE_ICE_OUTPOST",
+        "HYRULE_CIRCUIT"
+      ]
+    },
+    {
+      "name": "CROSSING",
+      "courses": [
+        "BABY_PARK",
+        "CHEESE_LAND",
+        "WILD_WOODS",
+        "ANIMAL_CROSSING"
+      ]
+    },
+    {
+      "name": "BELL",
+      "courses": [
+        "NEO_BOWSER_CITY",
+        "RIBBON_ROAD",
+        "SUPER_BELL_SUBWAY",
+        "BIG_BLUE"
+      ]
+    }
+  ]
+}

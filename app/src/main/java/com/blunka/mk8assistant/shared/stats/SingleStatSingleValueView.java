@@ -7,16 +7,16 @@ import android.content.Context;
  */
 public abstract class SingleStatSingleValueView extends AbstractSingleStatView {
   // Model.
-  protected float mMaxValue;
-  protected float mNewValue;
+  protected double mMaxValue;
+  protected double mNewValue;
 
   public SingleStatSingleValueView(Context context) {
     super(context);
   }
 
-  public void setMaxValue(float maxValue) {
+  public void setMaxValue(double maxValue) {
     mMaxValue = maxValue;
   }
 
-  protected abstract void updateValue(float newValue);
+  protected abstract void updateValue(double newValue);
 }

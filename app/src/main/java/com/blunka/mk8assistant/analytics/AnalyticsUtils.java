@@ -5,7 +5,7 @@ import android.content.Context;
 import com.blunka.mk8assistant.data.AdjustConfiguration;
 import com.blunka.mk8assistant.data.Attribute;
 import com.blunka.mk8assistant.data.KartConfiguration;
-import com.blunka.mk8assistant.data.HasDisplayNameAndIcon;
+import com.blunka.mk8assistant.data.parts.Part;
 import com.blunka.mk8assistant.main.adjust.ConfigurationChoice;
 import com.blunka.mk8assistant.shared.preferences.StarredBuildUtils;
 import com.google.android.gms.analytics.HitBuilders;
@@ -136,13 +136,13 @@ public class AnalyticsUtils {
         .setCategory(ADJUST_BUILD_RESULT_CATEGORY_CUSTOM)
         .setLabel(configurationChoice.name())
         .setCustomDimension(CUSTOM_DIMENSION_CHARACTER_GROUP,
-            kartConfiguration.getCharacterGroup().name())
+            kartConfiguration.getCharacterGroup().getName())
         .setCustomDimension(CUSTOM_DIMENSION_VEHICLE_GROUP,
-            kartConfiguration.getVehicleGroup().name())
+            kartConfiguration.getVehicleGroup().getName())
         .setCustomDimension(CUSTOM_DIMENSION_TIRE_GROUP,
-            kartConfiguration.getTireGroup().name())
+            kartConfiguration.getTireGroup().getName())
         .setCustomDimension(CUSTOM_DIMENSION_GLIDER_GROUP,
-            kartConfiguration.getGliderGroup().name())
+            kartConfiguration.getGliderGroup().getName())
         .build());
 
     tracker.send(new HitBuilders.EventBuilder()
@@ -151,12 +151,12 @@ public class AnalyticsUtils {
         .build());
   }
 
-  public static void sendPartViewClickedEvent(Tracker tracker, String screenName, HasDisplayNameAndIcon part) {
+  public static void sendPartViewClickedEvent(Tracker tracker, String screenName, Part part) {
     tracker.send(new HitBuilders.EventBuilder()
         .setCategory(PART_VIEW_CATEGORY)
         .setAction(CLICK_ACTION)
         .setCustomDimension(CUSTOM_DIMENSION_PARENT_FRAGMENT, screenName)
-        .setLabel(((Enum) part).name())
+        .setLabel(part.getName())
         .build());
   }
 
@@ -168,13 +168,13 @@ public class AnalyticsUtils {
         .setCategory(STAR_VIEW_CATEGORY_CUSTOM)
         .setAction(starred ? STAR_ACTION : UNSTAR_ACTION)
         .setCustomDimension(CUSTOM_DIMENSION_CHARACTER_GROUP,
-            kartConfiguration.getCharacterGroup().name())
+            kartConfiguration.getCharacterGroup().getName())
         .setCustomDimension(CUSTOM_DIMENSION_VEHICLE_GROUP,
-            kartConfiguration.getVehicleGroup().name())
+            kartConfiguration.getVehicleGroup().getName())
         .setCustomDimension(CUSTOM_DIMENSION_TIRE_GROUP,
-            kartConfiguration.getTireGroup().name())
+            kartConfiguration.getTireGroup().getName())
         .setCustomDimension(CUSTOM_DIMENSION_GLIDER_GROUP,
-            kartConfiguration.getGliderGroup().name())
+            kartConfiguration.getGliderGroup().getName())
         .build());
 
     tracker.send(new HitBuilders.EventBuilder()
@@ -191,13 +191,13 @@ public class AnalyticsUtils {
         .setCategory(COMPARE_VIEW_CATEGORY_CUSTOM)
         .setAction(SELECT_ACTION)
         .setCustomDimension(CUSTOM_DIMENSION_CHARACTER_GROUP,
-            kartConfiguration.getCharacterGroup().name())
+            kartConfiguration.getCharacterGroup().getName())
         .setCustomDimension(CUSTOM_DIMENSION_VEHICLE_GROUP,
-            kartConfiguration.getVehicleGroup().name())
+            kartConfiguration.getVehicleGroup().getName())
         .setCustomDimension(CUSTOM_DIMENSION_TIRE_GROUP,
-            kartConfiguration.getTireGroup().name())
+            kartConfiguration.getTireGroup().getName())
         .setCustomDimension(CUSTOM_DIMENSION_GLIDER_GROUP,
-            kartConfiguration.getGliderGroup().name())
+            kartConfiguration.getGliderGroup().getName())
         .build());
 
     tracker.send(new HitBuilders.EventBuilder()

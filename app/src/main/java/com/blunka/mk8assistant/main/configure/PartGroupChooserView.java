@@ -8,10 +8,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.blunka.mk8assistant.R;
+import com.blunka.mk8assistant.data.parts.Part;
 import com.blunka.mk8assistant.data.parts.PartGroup;
 import com.blunka.mk8assistant.shared.Constants;
 import com.blunka.mk8assistant.shared.FilteredLogger;
 import com.blunka.mk8assistant.shared.ui.UiUtils;
+
+import java.util.List;
 
 import fr.castorflex.android.verticalviewpager.VerticalViewPager;
 
@@ -62,11 +65,9 @@ public class PartGroupChooserView extends LinearLayout {
     mListener = listener;
   }
 
-  public void init(Class<? extends PartGroup> partGroupClass) {
-    mPartGroupViewPagerAdapter = new PartGroupViewPagerAdapter(this.getContext(),
-        partGroupClass);
+  public void init(List<PartGroup> partGroups) {
+    mPartGroupViewPagerAdapter = new PartGroupViewPagerAdapter(this.getContext(), partGroups);
     mViewPager.setAdapter(mPartGroupViewPagerAdapter);
-//    mViewPager.setOffscreenPageLimit(mPartGroupViewPagerAdapter.getCount() - 1);
 
     mUpwardTriangle.setVisibility(mViewPager.getCurrentItem() == 0 ? INVISIBLE : VISIBLE);
     mDownwardTriangle.setVisibility(
@@ -75,11 +76,11 @@ public class PartGroupChooserView extends LinearLayout {
             VISIBLE);
   }
 
-  public synchronized void setCurrentItemSilently(Enum<? extends PartGroup> partGroup) {
-    FilteredLogger.d(TAG, "setCurrentItemSilently: " + partGroup.ordinal());
-    if (mViewPager.getCurrentItem() != partGroup.ordinal()) {
+  public synchronized void setCurrentItemSilently(PartGroup partGroup) {
+    FilteredLogger.d(TAG, "setCurrentItemSilently: " + partGroup.getIndex());
+    if (mViewPager.getCurrentItem() != partGroup.getIndex()) {
       mChooserOnPageChangeListener.setNextChangeSilent();
-      mViewPager.setCurrentItem(partGroup.ordinal(), true);
+      mViewPager.setCurrentItem(partGroup.getIndex(), true);
     }
   }
 

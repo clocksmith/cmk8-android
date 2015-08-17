@@ -10,7 +10,6 @@ import com.blunka.mk8assistant.data.HasDisplayNameAndIcon;
 import com.blunka.mk8assistant.shared.FilteredLogger;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by clocksmith on 9/10/14.
@@ -66,8 +65,8 @@ public class MapsSpinnerAdapter<T extends HasDisplayNameAndIcon> extends ArrayAd
       mItemView = internalGetView(position, convertView);
     } else {
       mItemView.setIconDrawable(
-          mContext.getResources().getDrawable(getItem(position).getIconResourceId()));
-      mItemView.setLabelString(getItem(position).getDisplayName(mContext));
+          mContext.getResources().getDrawable(getItem(position).getIconResId()));
+      mItemView.setLabelString(getItem(position).getDisplayName());
     }
     return mItemView;
   }
@@ -86,8 +85,8 @@ public class MapsSpinnerAdapter<T extends HasDisplayNameAndIcon> extends ArrayAd
   private SpinnerItemWithIconView internalGetView(int position, View convertView) {
     SpinnerItemWithIconView view = new SpinnerItemWithIconView(mContext);
     view.setIconDrawable(
-        mContext.getResources().getDrawable(getItem(position).getIconResourceId()));
-    view.setLabelString(getItem(position).getDisplayName(mContext));
+        mContext.getResources().getDrawable(getItem(position).getIconResId()));
+    view.setLabelString(getItem(position).getDisplayName());
     return view;
   }
 }
