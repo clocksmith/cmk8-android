@@ -341,12 +341,10 @@ public class CompareFragment extends AnalyticsFragment {
           if (parent.equals(mLeftSpinner)) {
             updateKartConfiguration(mLeftKartConfigurationView, leftKartConfiguration);
             AnalyticsUtils.sendCompareViewSelectedEvent(mTracker,
-                getActivity(),
                 leftKartConfiguration);
           } else if (parent.equals(mRightSpinner)) {
             updateKartConfiguration(mRightKartConfigurationView, rightKartConfiguration);
             AnalyticsUtils.sendCompareViewSelectedEvent(mTracker,
-                getActivity(),
                 rightKartConfiguration);
           }
           updateStatsView(leftKartConfiguration, rightKartConfiguration);

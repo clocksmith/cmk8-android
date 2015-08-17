@@ -23,12 +23,12 @@ public class CourseData {
 
   public static void init(Context context) throws JSONException {
     Log.d(TAG, "init");
-    JSONObject partsObj = JsonUtils.loadJsonFromAssets(context, "data/courses.json");
+    JSONObject cupsJsonObj = JsonUtils.loadJsonFromAssets(context, "data/courses.json");
 
     // Just in case...
     CUPS.clear();
 
-    JSONArray cupsJsonArray = partsObj.getJSONArray("cups");
+    JSONArray cupsJsonArray = cupsJsonObj.getJSONArray("cups");
     for (int i = 0; i < cupsJsonArray.length(); i++) {
       Log.d(TAG, "adding cup: " + i);
       JSONObject cupJsonObj = cupsJsonArray.getJSONObject(i);
@@ -36,7 +36,8 @@ public class CourseData {
 
       JSONArray coursesJsonArray = cupJsonObj.getJSONArray("courses");
       for (int j = 0; j < coursesJsonArray.length(); j++) {
-        courses.add(new Course(context, coursesJsonArray.getString(i), i * Constants.NUM_COURSES_IN_CUP + j, j));
+        Log.d(TAG, "adding course: " + j);
+        courses.add(new Course(context, coursesJsonArray.getString(j), i * Constants.NUM_COURSES_IN_CUP + j, j));
       }
 
       CUPS.add(new Cup(context, cupJsonObj.getString("name"), courses, i));

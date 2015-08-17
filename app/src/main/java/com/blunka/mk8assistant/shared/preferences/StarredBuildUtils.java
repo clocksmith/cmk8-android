@@ -2,6 +2,7 @@ package com.blunka.mk8assistant.shared.preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.blunka.mk8assistant.data.KartConfiguration;
 import com.blunka.mk8assistant.data.parts.Part;
@@ -22,6 +23,8 @@ import java.util.Set;
  * Created by clocksmith on 7/16/14.
  */
 public class StarredBuildUtils {
+  private static final String TAG = StarredBuildUtils.class.getSimpleName();
+
   private static final String BUILD_NAMESPACE = "namespace$starredBuildLibrary";
 
   private static final String KEY_SEPERATOR = ":";
@@ -98,15 +101,14 @@ public class StarredBuildUtils {
   }
 
   public static String getNameFromBuild(Context context, ConfigureModel configureModel) {
-    return getNameFromConfiguration(context, configureModel.getKartConfiguration());
+    return getNameFromConfiguration(configureModel.getKartConfiguration());
   }
 
-  public static String getNameFromKey(Context context, String key) {
-    return getNameFromConfiguration(context, getKartConfigurationFromKey(key));
+  public static String getNameFromKey(String key) {
+    return getNameFromConfiguration(getKartConfigurationFromKey(key));
   }
 
-  public static String getNameFromConfiguration(Context context,
-      KartConfiguration configuration) {
+  public static String getNameFromConfiguration(KartConfiguration configuration) {
     // It is intentional that character is get display name while the rest are get name
     return Joiner.on(NAME_SEPERATOR).join(
         configuration.getCharacterGroup().getDisplayName(),
@@ -116,6 +118,7 @@ public class StarredBuildUtils {
   }
 
   public static KartConfiguration getKartConfigurationFromKey(String key) {
+    Log.d(TAG, "key: " + key);
     if (key == null) {
       return null;
     } else {

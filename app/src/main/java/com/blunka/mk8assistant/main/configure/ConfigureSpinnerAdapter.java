@@ -73,8 +73,7 @@ public class ConfigureSpinnerAdapter extends ArrayAdapter<String> {
   private TextView createLabel(int position) {
     boolean isLoadFromAdjust = getItem(position).equals(LOAD_FROM_ADJUST);
     return SpinnerUtils.createLabel(mContext,
-        position == 0 ? LOAD_FROM_ADJUST : StarredBuildUtils.getNameFromKey(mContext,
-            getItem(position)),
+        position == 0 ? LOAD_FROM_ADJUST : StarredBuildUtils.getNameFromKey(getItem(position)),
         mContext.getResources().getColor(isLoadFromAdjust ? R.color.mk8_blue : R.color.dark_gray),
         false);
   }
@@ -82,8 +81,7 @@ public class ConfigureSpinnerAdapter extends ArrayAdapter<String> {
   private TextView createDropDownLabel(int position) {
     boolean isLoadFromAdjust = getItem(position).equals(LOAD_FROM_ADJUST);
     return SpinnerUtils.createDropDownLabel(mContext,
-        position == 0 ? LOAD_FROM_ADJUST : StarredBuildUtils.getNameFromKey(mContext,
-            getItem(position)),
+        position == 0 ? LOAD_FROM_ADJUST : StarredBuildUtils.getNameFromKey(getItem(position)),
         mContext.getResources().getColor(isLoadFromAdjust ? R.color.mk8_blue : R.color.dark_gray),
         isLoadFromAdjust || getItem(position).equals(mSpinner.getSelectedItem()));
   }

@@ -217,12 +217,16 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
     switch(partGroup.getPartType()) {
       case CHARACTER:
         mConfigureModel.getKartConfiguration().setCharacterGroup(partGroup);
+        break;
       case VEHICLE:
         mConfigureModel.getKartConfiguration().setVehicleGroup(partGroup);
+        break;
       case TIRE:
         mConfigureModel.getKartConfiguration().setTireGroup(partGroup);
+        break;
       case GLIDER:
         mConfigureModel.getKartConfiguration().setGliderGroup(partGroup);
+        break;
     }
 
     updateModel(mConfigureModel);
@@ -251,6 +255,7 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
     List<String> buildKeys = StarredBuildUtils.getAllStarredKeysSortedByEnum(getActivity());
     String currentKey = StarredBuildUtils.getKeyFromBuild(mConfigureModel);
     buildKeys.add(currentKey);
+    Log.d(TAG, "buildKeys: " + buildKeys);
     mConfigureSpinnerAdapter = new ConfigureSpinnerAdapter(getActivity(),
         mSpinner,
         buildKeys.toArray(new String[buildKeys.size()]));
@@ -296,6 +301,7 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
         mSpinner.setSelection(mConfigureSpinnerAdapter.getLastPosition());
         launchAdjustActivity();
       } else {
+        Log.d(TAG, "parent.getItemAtPosition(position): " + parent.getItemAtPosition(position));
         mConfigureModel.setPlayerConfiguration(StarredBuildUtils.getKartConfigurationFromKey(
             (String) parent.getItemAtPosition(position)));
         if (position != mConfigureSpinnerAdapter.getLastPosition()) {
@@ -321,7 +327,6 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
           mListener.onStarredBuildLibraryUpdated(null);
         }
         AnalyticsUtils.sendStarViewStarredEvent(mTracker,
-            getActivity(),
             mConfigureModel.getKartConfiguration(),
             false);
         updateSpinner();
@@ -333,7 +338,6 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
           mListener.onStarredBuildLibraryUpdated(StarredBuildUtils.getKeyFromBuild(mConfigureModel));
         }
         AnalyticsUtils.sendStarViewStarredEvent(mTracker,
-            getActivity(),
             mConfigureModel.getKartConfiguration(),
             true);
         updateSpinner();

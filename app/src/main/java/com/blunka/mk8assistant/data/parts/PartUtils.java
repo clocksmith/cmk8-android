@@ -1,6 +1,6 @@
 package com.blunka.mk8assistant.data.parts;
 
-import android.provider.Telephony;
+import android.util.Log;
 
 import com.google.common.collect.Iterables;
 
@@ -10,6 +10,8 @@ import java.util.List;
  * Created by clocksmith on 8/16/15.
  */
 public class PartUtils {
+  private static final String TAG = PartUtils.class.getSimpleName();
+
   public static PartGroup getPartGroup(Part part) {
     for (PartGroup aPartGroup : Iterables.concat(
         PartData.CHARACTER_GROUPS,
@@ -36,6 +38,7 @@ public class PartUtils {
       case GLIDER:
         return getPartGroup(PartData.GLIDER_GROUPS, name);
       default:
+        Log.e(TAG, "Could not get part group for partType: " + partType.name() + " and name: " + name);
         return null;
     }
   }
@@ -46,6 +49,7 @@ public class PartUtils {
         return partGroup;
       }
     }
+    Log.e(TAG, "Could not get part group for name: " + name);
     return null;
   }
 }

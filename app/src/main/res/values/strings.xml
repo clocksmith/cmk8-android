@@ -124,6 +124,7 @@
   <string name="vehicle_f">Vehicle F</string>
   <string name="vehicle_g">Vehicle G</string>
   <string name="vehicle_h">Vehicle H</string>
+  <string name="vehicle_i">Vehicle I</string>
 
   <!-- Vehicle Group A -->
   <string name="standard_kart">Standard Kart</string>
@@ -310,4 +311,29 @@
   <string name="piranha_plant_slide">Piranha Plant Slide</string>
   <string name="grumble_volcano">Grumble Volcano</string>
   <string name="rainbow_road_n64">Rainbow Road (N64)</string>
+
+  <!-- Egg Cup -->
+  <string name="yoshi_circuit">Yoshi Circuit</string>
+  <string name="excitebike_arena">Excitebike Arena</string>
+  <string name="dragon_driftway">Dragon Driftway</string>
+  <string name="mute_city">Mute City</string>
+
+  <!-- Triforce Cup -->
+  <string name="warios_gold_mine">Wario\'s Gold Mine</string>
+  <string name="rainbow_road_snes">Rainbow Road (SNES)</string>
+  <string name="ice_ice_outpost">Ice Ice Outpost</string>
+  <string name="hyrule_circuit">Hyrule Circuit</string>
+
+  <!-- Crossing Cup -->
+  <string name="baby_park">Baby Park</string>
+  <string name="cheese_land">Cheese Land</string>
+  <string name="wild_woods">Wild Woods</string>
+  <string name="animal_crossing">Animal Crossing</string>
+
+  <!-- Bell Cup -->
+  <string name="neo_bowser_city">Neo Bowser City</string>
+  <string name="ribbon_road">Ribbon Road</string>
+  <string name="super_bell_subway">Super Bell Subway</string>
+  <string name="big_blue">Big Blue</string>
+
 </resources>

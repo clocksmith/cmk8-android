@@ -3,6 +3,7 @@ package com.blunka.mk8assistant.data.courses;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import com.blunka.mk8assistant.R;
 import com.blunka.mk8assistant.data.HasDisplayNameAndIcon;
@@ -11,6 +12,8 @@ import com.blunka.mk8assistant.data.HasDisplayNameAndIcon;
  * Created by clocksmith on 9/7/14.
  */
 public class Course implements Parcelable, HasDisplayNameAndIcon {
+  private static final String TAG = Course.class.getSimpleName();
+
   private String mName;
   private String mDisplayName;
   private int mIconResId;

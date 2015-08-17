@@ -129,7 +129,6 @@ public class AnalyticsUtils {
   }
 
   public static void sendBuildConfigurationEvent(Tracker tracker,
-      Context context,
       ConfigurationChoice configurationChoice,
       KartConfiguration kartConfiguration) {
     tracker.send(new HitBuilders.EventBuilder()
@@ -147,7 +146,7 @@ public class AnalyticsUtils {
 
     tracker.send(new HitBuilders.EventBuilder()
         .setCategory(ADJUST_BUILD_RESULT_CATEGORY_SIMPLE)
-        .setLabel(StarredBuildUtils.getNameFromConfiguration(context, kartConfiguration))
+        .setLabel(StarredBuildUtils.getNameFromConfiguration(kartConfiguration))
         .build());
   }
 
@@ -161,7 +160,6 @@ public class AnalyticsUtils {
   }
 
   public static void sendStarViewStarredEvent(Tracker tracker,
-      Context context,
       KartConfiguration kartConfiguration,
       boolean starred) {
     tracker.send(new HitBuilders.EventBuilder()
@@ -180,12 +178,11 @@ public class AnalyticsUtils {
     tracker.send(new HitBuilders.EventBuilder()
         .setCategory(STAR_VIEW_CATEGORY_SIMPLE)
         .setAction(starred ? STAR_ACTION : UNSTAR_ACTION)
-        .setLabel(StarredBuildUtils.getNameFromConfiguration(context, kartConfiguration))
+        .setLabel(StarredBuildUtils.getNameFromConfiguration(kartConfiguration))
         .build());
   }
 
   public static void sendCompareViewSelectedEvent(Tracker tracker,
-      Context context,
       KartConfiguration kartConfiguration) {
     tracker.send(new HitBuilders.EventBuilder()
         .setCategory(COMPARE_VIEW_CATEGORY_CUSTOM)
@@ -203,7 +200,7 @@ public class AnalyticsUtils {
     tracker.send(new HitBuilders.EventBuilder()
         .setCategory(COMPARE_VIEW_CATEGORY_SIMPLE)
         .setAction(SELECT_ACTION)
-        .setLabel(StarredBuildUtils.getNameFromConfiguration(context, kartConfiguration))
+        .setLabel(StarredBuildUtils.getNameFromConfiguration(kartConfiguration))
         .build());
   }
 

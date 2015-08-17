@@ -117,7 +117,6 @@ public class AdjustActivity extends FragmentActivity implements AdjustFragment.L
     @Override
     protected void onPreExecute() {
       mProgressDialog = new ProgressDialog(AdjustActivity.this);
-//      mProgressDialog.setMessage(getResources().getString(R.string.building_progress));
       mProgressDialog.show();
     }
 
@@ -137,7 +136,6 @@ public class AdjustActivity extends FragmentActivity implements AdjustFragment.L
       Intent returnIntent = new Intent();
       if (configureModel != null) {
         AnalyticsUtils.sendBuildConfigurationEvent(mTracker,
-            AdjustActivity.this,
             mAdjustModel.getSelectedConfigurationChoice(),
             configureModel.getKartConfiguration());
         returnIntent.putExtra(ArgKeys.BUILD_MODEL, configureModel);

@@ -55,7 +55,7 @@ public class CompareSpinnerAdapter extends ArrayAdapter<String> {
 
   private TextView createLabel(int position) {
     TextView label = SpinnerUtils.createLabel(mContext,
-        StarredBuildUtils.getNameFromKey(mContext, getItem(position)),
+        StarredBuildUtils.getNameFromKey(getItem(position)),
         mContext.getResources().getColor(R.color.dark_gray),
         false);
     label.setTextSize(TypedValue.COMPLEX_UNIT_PX,
@@ -66,7 +66,7 @@ public class CompareSpinnerAdapter extends ArrayAdapter<String> {
 
   private TextView createDropDownLabel(int position) {
     return SpinnerUtils.createDropDownLabel(mContext,
-        StarredBuildUtils.getNameFromKey(mContext, getItem(position)),
+        StarredBuildUtils.getNameFromKey(getItem(position)),
         mContext.getResources().getColor(R.color.dark_gray),
         getItem(position).equals(mSpinner.getSelectedItem()));
   }

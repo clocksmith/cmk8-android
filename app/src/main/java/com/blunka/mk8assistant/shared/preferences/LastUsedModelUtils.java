@@ -2,7 +2,6 @@ package com.blunka.mk8assistant.shared.preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.blunka.mk8assistant.main.adjust.AdjustModel;
 import com.blunka.mk8assistant.main.configure.ConfigureModel;
@@ -11,9 +10,6 @@ import com.blunka.mk8assistant.main.maps.MapsModel;
 import com.blunka.mk8assistant.shared.FilteredLogger;
 import com.blunka.mk8assistant.shared.Model;
 import com.google.gson.GsonBuilder;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * Created by clocksmith on 7/18/14.
@@ -74,8 +70,8 @@ public class LastUsedModelUtils {
 
   private static Model getLastUsedModel(Context context, String modelKey) {
     String jsonString = getPreferences(context).getString(modelKey, "");
-    Log.d(TAG, "getLastUsedModel jsonString: " + jsonString);
     // Temp fix because we can't easily convert the json to a legacy class.
+    // TODO(clocksmith): Make this work again.
     return null;
 //    return jsonString.equals("") ? null :
 //        (Model) new GsonBuilder().create().fromJson(jsonString, getClassForKey(modelKey));

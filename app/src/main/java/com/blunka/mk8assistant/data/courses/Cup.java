@@ -3,8 +3,10 @@ package com.blunka.mk8assistant.data.courses;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import com.blunka.mk8assistant.data.HasDisplayNameAndIcon;
+import com.blunka.mk8assistant.data.parts.Part;
 import com.google.common.collect.Lists;
 
 import java.util.List;
@@ -15,6 +17,8 @@ import java.util.List;
  * This is really a "CourseGroup"
  */
 public class Cup implements Parcelable, HasDisplayNameAndIcon {
+  private static final String TAG = Cup.class.getSimpleName();
+
   private String mName;
   private String mDisplayName;
   private int mIconResId;
@@ -61,7 +65,7 @@ public class Cup implements Parcelable, HasDisplayNameAndIcon {
     mName = in.readString();
     mDisplayName = in.readString();
     mIconResId = in.readInt();
-    mCourses = Lists.newArrayList((Course[]) in.readParcelableArray(Course.class.getClassLoader()));
+    mCourses = Lists.newArrayList(in.createTypedArray(Course.CREATOR));
     mIndex = in.readInt();
   }
 
@@ -70,7 +74,7 @@ public class Cup implements Parcelable, HasDisplayNameAndIcon {
     out.writeString(mName);
     out.writeString(mDisplayName);
     out.writeInt(mIconResId);
-    out.writeParcelableArray((Parcelable[]) mCourses.toArray(), flags);
+    out.writeTypedArray(mCourses.toArray(new Course[mCourses.size()]), flags);
     out.writeInt(mIndex);
   }
 

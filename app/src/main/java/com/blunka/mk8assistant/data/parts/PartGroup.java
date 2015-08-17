@@ -3,6 +3,7 @@ package com.blunka.mk8assistant.data.parts;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import com.blunka.mk8assistant.data.Stats;
 import com.google.common.collect.Lists;
@@ -13,6 +14,8 @@ import java.util.List;
  * Created by clocksmith on 8/8/14.
  */
 public class PartGroup implements Parcelable {
+  private static final String TAG = PartGroup.class.getSimpleName();
+
   private String mName;
   private String mDisplayName;
   private Stats mStats;
@@ -23,7 +26,7 @@ public class PartGroup implements Parcelable {
   public PartGroup(Context context, String name, Stats stats, List<Part> parts, Part.Type partType, int index) {
     mName = name;
     mDisplayName = context.getString(context.getResources().getIdentifier(
-        name.toLowerCase(),
+        partType == Part.Type.CHARACTER ? name.toLowerCase() : partType.name().toLowerCase() + "_" + name.toLowerCase(),
         "string",
         context.getPackageName()));
     mStats = stats;
@@ -60,7 +63,7 @@ public class PartGroup implements Parcelable {
     mName = in.readString();
     mDisplayName = in.readString();
     mStats = in.readParcelable(Stats.class.getClassLoader());
-    mParts = Lists.newArrayList((Part[]) in.readParcelableArray(Part.class.getClassLoader()));
+    mParts = Lists.newArrayList(in.createTypedArray(Part.CREATOR));
     mPartType = (Part.Type) in.readSerializable();
     mIndex = in.readInt();
   }
@@ -70,7 +73,7 @@ public class PartGroup implements Parcelable {
     out.writeString(mName);
     out.writeString(mDisplayName);
     out.writeParcelable(mStats, flags);
-    out.writeParcelableArray((Parcelable[]) mParts.toArray(), flags);
+    out.writeTypedArray(mParts.toArray(new Part[mParts.size()]), flags);
     out.writeSerializable(mPartType);
     out.writeInt(mIndex);
   }

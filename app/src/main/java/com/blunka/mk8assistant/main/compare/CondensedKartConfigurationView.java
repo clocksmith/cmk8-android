@@ -59,7 +59,7 @@ public class CondensedKartConfigurationView extends LinearLayout {
             1);
         UiUtils.unbindDrawables(mContainer);
         mContainer.removeAllViews();
-        for (PartGroup partGroup : kartConfiguration.getParts()) {
+        for (PartGroup partGroup : kartConfiguration.getPartGroups()) {
           CondensedPartGroupView condensedPartGroupView =
               new CondensedPartGroupView(getContext(), partGroup);
           mContainer.addView(condensedPartGroupView, layoutParams);

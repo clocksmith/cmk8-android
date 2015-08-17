@@ -37,7 +37,7 @@ public class KartConfiguration implements Parcelable {
     mGliderGroup = gliderGroup;
   }
 
-  public List<PartGroup> getParts() {
+  public List<PartGroup> getPartGroups() {
     return ImmutableList.of(mCharacterGroup,
         mVehicleGroup,
         mTireGroup,

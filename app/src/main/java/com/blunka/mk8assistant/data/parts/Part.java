@@ -25,12 +25,10 @@ public class Part implements Parcelable {
 
   public Part(Context context, String name, Type type) {
     mName = name;
-    Log.d(TAG, name.toLowerCase());
     mDisplayName = context.getString(context.getResources().getIdentifier(
         name.toLowerCase(),
         "string",
         context.getPackageName()));
-    Log.d(TAG, "wiiu_" + type.name().toLowerCase() + "_" + name.toLowerCase());
     mIconResId = context.getResources().getIdentifier(
         "wiiu_" + type.name().toLowerCase() + "_" + name.toLowerCase(),
         "drawable",
