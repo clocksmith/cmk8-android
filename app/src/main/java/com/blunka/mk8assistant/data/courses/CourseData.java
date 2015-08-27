@@ -43,4 +43,9 @@ public class CourseData {
       CUPS.add(new Cup(context, cupJsonObj.getString("name"), courses, i));
     }
   }
+
+  public static Course getCourse(int position) {
+    return CUPS.get(position / Constants.NUM_COURSES_IN_CUP)
+        .getCourses().get(position % Constants.NUM_COURSES_IN_CUP);
+  }
 }

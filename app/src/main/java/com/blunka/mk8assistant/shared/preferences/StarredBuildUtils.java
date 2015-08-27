@@ -6,7 +6,8 @@ import android.util.Log;
 
 import com.blunka.mk8assistant.data.KartConfiguration;
 import com.blunka.mk8assistant.data.parts.Part;
-import com.blunka.mk8assistant.data.parts.PartUtils;
+import com.blunka.mk8assistant.data.parts.PartData;
+import com.blunka.mk8assistant.data.parts.PartType;
 import com.blunka.mk8assistant.main.configure.ConfigureModel;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
@@ -124,10 +125,10 @@ public class StarredBuildUtils {
     } else {
       List<String> keyFragments = Lists.newArrayList(Splitter.on(KEY_SEPERATOR).split(key));
       return KartConfiguration.newBuilder()
-          .withCharacterGroup(PartUtils.getPartGroup(Part.Type.CHARACTER, keyFragments.get(0)))
-          .withVehicleGroup(PartUtils.getPartGroup(Part.Type.VEHICLE, keyFragments.get(1)))
-          .withTireGroup(PartUtils.getPartGroup(Part.Type.TIRE, keyFragments.get(2)))
-          .withGliderGroup(PartUtils.getPartGroup(Part.Type.GLIDER, keyFragments.get(3)))
+          .withCharacterGroup(PartData.getPartGroup(PartType.CHARACTER, keyFragments.get(0)))
+          .withVehicleGroup(PartData.getPartGroup(PartType.VEHICLE, keyFragments.get(1)))
+          .withTireGroup(PartData.getPartGroup(PartType.TIRE, keyFragments.get(2)))
+          .withGliderGroup(PartData.getPartGroup(PartType.GLIDER, keyFragments.get(3)))
           .build();
     }
   }

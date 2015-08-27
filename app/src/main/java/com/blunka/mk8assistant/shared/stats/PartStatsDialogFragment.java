@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.blunka.mk8assistant.R;
 import com.blunka.mk8assistant.data.Stats;
 import com.blunka.mk8assistant.data.parts.Part;
-import com.blunka.mk8assistant.data.parts.PartUtils;
+import com.blunka.mk8assistant.data.parts.PartData;
 import com.blunka.mk8assistant.main.configure.MultiStatsPositiveView;
 import com.blunka.mk8assistant.shared.ArgKeys;
 import com.blunka.mk8assistant.shared.FilteredLogger;
@@ -171,6 +171,6 @@ public class PartStatsDialogFragment extends TransitionImageDialogFragment {
         LinearLayout.LayoutParams.MATCH_PARENT));
     FilteredLogger.d(TAG, "addStatsView() mMultiStatsWithLabelView added to layout: " +
         (System.currentTimeMillis() - mStartTimeMs) + "ms");
-    mMultiStatsWithLabelView.updateStatViews(PartUtils.getPartGroup(mPart).getStats());
+    mMultiStatsWithLabelView.updateStatViews(PartData.getPartGroup(mPart).getStats());
   }
 }

@@ -16,7 +16,6 @@ import com.blunka.mk8assistant.R;
 import com.blunka.mk8assistant.analytics.AnalyticsFragment;
 import com.blunka.mk8assistant.data.courses.Course;
 import com.blunka.mk8assistant.data.courses.CourseData;
-import com.blunka.mk8assistant.data.courses.CourseUtils;
 import com.blunka.mk8assistant.data.courses.Cup;
 import com.blunka.mk8assistant.shared.ArgKeys;
 import com.blunka.mk8assistant.shared.Constants;

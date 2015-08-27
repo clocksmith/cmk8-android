@@ -13,7 +13,9 @@ import com.blunka.mk8assistant.data.parts.PartGroup;
 import com.blunka.mk8assistant.shared.Constants;
 import com.blunka.mk8assistant.shared.FilteredLogger;
 import com.blunka.mk8assistant.shared.ui.UiUtils;
+import com.google.common.collect.Lists;
 
+import java.util.Collection;
 import java.util.List;
 
 import fr.castorflex.android.verticalviewpager.VerticalViewPager;
@@ -65,8 +67,8 @@ public class PartGroupChooserView extends LinearLayout {
     mListener = listener;
   }
 
-  public void init(List<PartGroup> partGroups) {
-    mPartGroupViewPagerAdapter = new PartGroupViewPagerAdapter(this.getContext(), partGroups);
+  public void init(Collection<PartGroup> partGroups) {
+    mPartGroupViewPagerAdapter = new PartGroupViewPagerAdapter(this.getContext(), Lists.newArrayList(partGroups));
     mViewPager.setAdapter(mPartGroupViewPagerAdapter);
 
     mUpwardTriangle.setVisibility(mViewPager.getCurrentItem() == 0 ? INVISIBLE : VISIBLE);

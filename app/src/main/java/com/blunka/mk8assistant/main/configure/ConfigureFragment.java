@@ -237,10 +237,10 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
   }
 
   private void initChoosers() {
-    mCharacterChooser.init(PartData.CHARACTER_GROUPS);
-    mVehicleChooser.init(PartData.VEHICLE_GROUPS);
-    mTireChooser.init(PartData.TIRE_GROUPS);
-    mGliderChooser.init(PartData.GLIDER_GROUPS);
+    mCharacterChooser.init(PartData.CHARACTER_GROUPS.values());
+    mVehicleChooser.init(PartData.VEHICLE_GROUPS.values());
+    mTireChooser.init(PartData.TIRE_GROUPS.values());
+    mGliderChooser.init(PartData.GLIDER_GROUPS.values());
   }
 
   private void updateModel(ConfigureModel configureModel) {

@@ -6,12 +6,15 @@ import android.util.Log;
 import com.blunka.mk8assistant.data.JsonUtils;
 import com.blunka.mk8assistant.data.Stats;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by clocksmith on 8/16/15.
@@ -19,24 +22,40 @@ import java.util.List;
 public class PartData {
   private static final String TAG = PartData.class.getSimpleName();
 
-  public static final List<PartGroup> CHARACTER_GROUPS = Lists.newArrayList();
-  public static final List<PartGroup> VEHICLE_GROUPS = Lists.newArrayList();
-  public static final List<PartGroup> TIRE_GROUPS = Lists.newArrayList();
-  public static final List<PartGroup> GLIDER_GROUPS = Lists.newArrayList();
+  public static final Map<PartType, TreeMap<String, PartGroup>> PART_TYPE_TO_PART_GROUPS_MAP = Maps.newHashMap();
+  public static final Map<String, PartGroup> PART_NAME_TO_PART_GROUP_MAP = Maps.newHashMap();
+
+  public static final TreeMap<String, PartGroup> CHARACTER_GROUPS = Maps.newTreeMap();
+  public static final TreeMap<String, PartGroup> VEHICLE_GROUPS = Maps.newTreeMap();
+  public static final TreeMap<String, PartGroup> TIRE_GROUPS = Maps.newTreeMap();
+  public static final TreeMap<String, PartGroup> GLIDER_GROUPS = Maps.newTreeMap();
 
   public static void init(Context context) throws JSONException {
     Log.d(TAG, "init");
     JSONObject partsObj = JsonUtils.loadJsonFromAssets(context, "data/parts.json");
-    initPartGroupList(context, partsObj.getJSONArray("character_groups"), CHARACTER_GROUPS, Part.Type.CHARACTER);
-    initPartGroupList(context, partsObj.getJSONArray("vehicle_groups"), VEHICLE_GROUPS, Part.Type.VEHICLE);
-    initPartGroupList(context, partsObj.getJSONArray("tire_groups"), TIRE_GROUPS, Part.Type.TIRE);
-    initPartGroupList(context, partsObj.getJSONArray("glider_groups"), GLIDER_GROUPS, Part.Type.GLIDER);
+    initPartGroupList(context, partsObj.getJSONArray("character_groups"), CHARACTER_GROUPS, PartType.CHARACTER);
+    initPartGroupList(context, partsObj.getJSONArray("vehicle_groups"), VEHICLE_GROUPS, PartType.VEHICLE);
+    initPartGroupList(context, partsObj.getJSONArray("tire_groups"), TIRE_GROUPS, PartType.TIRE);
+    initPartGroupList(context, partsObj.getJSONArray("glider_groups"), GLIDER_GROUPS, PartType.GLIDER);
   }
 
-  private static void initPartGroupList(Context context, JSONArray in, List<PartGroup> out, Part.Type partType)
-      throws JSONException {
+  public static PartGroup getPartGroup(Part part) {
+    return PART_NAME_TO_PART_GROUP_MAP.get(part.getName());
+  }
+
+
+  public static PartGroup getPartGroup(PartType partType, String name) {
+    return PART_TYPE_TO_PART_GROUPS_MAP.get(partType).get(name);
+  }
+
+  private static void initPartGroupList(
+      Context context,
+      JSONArray in,
+      TreeMap<String, PartGroup> out,
+      PartType partType) throws JSONException {
     Log.d(TAG, "initPartGroupList: " + partType.name());
-    // Just in case...
+
+    // Just in case this was already called...
     out.clear();
 
     for (int i = 0; i < in.length(); i++) {
@@ -50,9 +69,10 @@ public class PartData {
       }
 
       JSONObject statsJsonObj = partGroupJsonObj.getJSONObject("stats");
+      String partName = partGroupJsonObj.getString("name");
       PartGroup partGroup = new PartGroup(
           context,
-          partGroupJsonObj.getString("name"),
+          partName,
           Stats.newBuilder()
               .withAcceleration(statsJsonObj.getDouble("acceleration"))
               .withGroundSpeed(statsJsonObj.getDouble("ground_speed"))
@@ -71,7 +91,13 @@ public class PartData {
           partType,
           i);
 
-      out.add(partGroup);
+      out.put(partName, partGroup);
+
+      for (Part part : partGroup.getParts()) {
+        PART_NAME_TO_PART_GROUP_MAP.put(part.getName(), partGroup);
+      }
     }
+
+    PART_TYPE_TO_PART_GROUPS_MAP.put(partType, out);
   }
 }

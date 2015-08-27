@@ -3,7 +3,6 @@ package com.blunka.mk8assistant.data.parts;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.Log;
 
 /**
  * Created by clocksmith on 8/16/15.
@@ -11,19 +10,12 @@ import android.util.Log;
 public class Part implements Parcelable {
   private static final String TAG = Part.class.getSimpleName();
 
-  public enum Type {
-    CHARACTER,
-    VEHICLE,
-    TIRE,
-    GLIDER
-  }
-
   private String mName;
   private String mDisplayName;
   private int mIconResId;
-  private Type mType;
+  private PartType mType;
 
-  public Part(Context context, String name, Type type) {
+  public Part(Context context, String name, PartType type) {
     mName = name;
     mDisplayName = context.getString(context.getResources().getIdentifier(
         name.toLowerCase(),
@@ -48,7 +40,7 @@ public class Part implements Parcelable {
     return mIconResId;
   }
 
-  public Type getType() {
+  public PartType getType() {
     return mType;
   }
 
@@ -56,7 +48,7 @@ public class Part implements Parcelable {
     mName = in.readString();
     mDisplayName = in.readString();
     mIconResId = in.readInt();
-    mType = (Type) in.readSerializable();
+    mType = (PartType) in.readSerializable();
   }
 
   @Override

@@ -20,13 +20,13 @@ public class PartGroup implements Parcelable {
   private String mDisplayName;
   private Stats mStats;
   private List<Part> mParts;
-  private Part.Type mPartType;
+  private PartType mPartType;
   private int mIndex;
 
-  public PartGroup(Context context, String name, Stats stats, List<Part> parts, Part.Type partType, int index) {
+  public PartGroup(Context context, String name, Stats stats, List<Part> parts, PartType partType, int index) {
     mName = name;
     mDisplayName = context.getString(context.getResources().getIdentifier(
-        partType == Part.Type.CHARACTER ? name.toLowerCase() : partType.name().toLowerCase() + "_" + name.toLowerCase(),
+        partType == PartType.CHARACTER ? name.toLowerCase() : partType.name().toLowerCase() + "_" + name.toLowerCase(),
         "string",
         context.getPackageName()));
     mStats = stats;
@@ -51,7 +51,7 @@ public class PartGroup implements Parcelable {
     return mParts;
   }
 
-  public Part.Type getPartType() {
+  public PartType getPartType() {
     return mPartType;
   }
 
@@ -64,7 +64,7 @@ public class PartGroup implements Parcelable {
     mDisplayName = in.readString();
     mStats = in.readParcelable(Stats.class.getClassLoader());
     mParts = Lists.newArrayList(in.createTypedArray(Part.CREATOR));
-    mPartType = (Part.Type) in.readSerializable();
+    mPartType = (PartType) in.readSerializable();
     mIndex = in.readInt();
   }
 

@@ -14,10 +14,10 @@ public class AllKartConfigurations {
 
   public AllKartConfigurations() {
     mKartConfigurations = Lists.newArrayList();
-    for (PartGroup characterGroup : PartData.CHARACTER_GROUPS) {
-      for (PartGroup vehicleGroup : PartData.VEHICLE_GROUPS) {
-        for (PartGroup tireGroup : PartData.TIRE_GROUPS) {
-          for (PartGroup gliderGroup : PartData.GLIDER_GROUPS) {
+    for (PartGroup characterGroup : PartData.CHARACTER_GROUPS.values()) {
+      for (PartGroup vehicleGroup : PartData.VEHICLE_GROUPS.values()) {
+        for (PartGroup tireGroup : PartData.TIRE_GROUPS.values()) {
+          for (PartGroup gliderGroup : PartData.GLIDER_GROUPS.values()) {
             mKartConfigurations.add(KartConfiguration.newBuilder()
                 .withCharacterGroup(characterGroup)
                 .withVehicleGroup(vehicleGroup)
