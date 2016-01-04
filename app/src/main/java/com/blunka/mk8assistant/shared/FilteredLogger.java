@@ -2,7 +2,9 @@ package com.blunka.mk8assistant.shared;
 
 import android.util.Log;
 
+import com.blunka.mk8assistant.data.parts.PartData;
 import com.blunka.mk8assistant.main.MainActivity;
+import com.blunka.mk8assistant.main.configure.ConfigureFragment;
 import com.blunka.mk8assistant.main.configure.PartGroupChooserView;
 import com.blunka.mk8assistant.main.configure.PartGroupViewPagerAdapter;
 import com.blunka.mk8assistant.main.maps.MapViewPagerAdapter;
@@ -26,8 +28,9 @@ public class FilteredLogger {
       // Fragments.
 //      AdjustFragment.class.getSimpleName(),
 //      BuildFragment.class.getSimpleName(),
+      ConfigureFragment.class.getSimpleName(),
 //      CompareFragment.class.getSimpleName(),
-      MapsFragment.class.getSimpleName(),
+//      MapsFragment.class.getSimpleName(),
 //      FaqFragment.class.getSimpleName(),
 //      TransitionImageDialogFragment.class.getSimpleName(),
 //      PartStatsDialogFragment.class.getSimpleName(),
@@ -48,6 +51,7 @@ public class FilteredLogger {
 
       // Other
 //      LastUsedModelUtils.class.getSimpleName(),
+      PartData.class.getSimpleName(),
 
 
       ""
@@ -55,7 +59,9 @@ public class FilteredLogger {
 
   public static void d(String tag, String message) {
     if (mAcceptedTags.contains(tag)) {
-      Log.d("FILTERED/" + tag, message);
+      Log.d("F/" + tag, message);
+    } else {
+      Log.d(tag, message);
     }
   }
 }

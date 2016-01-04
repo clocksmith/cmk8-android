@@ -16,7 +16,6 @@ import com.blunka.mk8assistant.R;
 import com.blunka.mk8assistant.analytics.AnalyticsFragment;
 import com.blunka.mk8assistant.analytics.AnalyticsUtils;
 import com.blunka.mk8assistant.data.KartConfiguration;
-import com.blunka.mk8assistant.data.parts.Part;
 import com.blunka.mk8assistant.data.parts.PartData;
 import com.blunka.mk8assistant.data.parts.PartGroup;
 import com.blunka.mk8assistant.main.adjust.AdjustActivity;
@@ -94,6 +93,7 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
       if (resultCode == Activity.RESULT_OK) {
         ConfigureModel configureModel = data.getParcelableExtra(ArgKeys.BUILD_MODEL);
         if (configureModel != null) {
+          FilteredLogger.d(TAG, "BUILD_MODEL: " + configureModel.getKartConfiguration().getCharacterGroup().getName());
           updateModel(configureModel);
 
           updateSpinnerSilentlyAndRestoreListeners();
@@ -126,7 +126,9 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
     } else {
       bundle = getArguments();
     }
-    mConfigureModel = bundle.getParcelable(ArgKeys.BUILD_MODEL);
+    if (mConfigureModel == null) {
+      mConfigureModel = bundle.getParcelable(ArgKeys.BUILD_MODEL);
+    }
 
     mBuildSpinnerListener = new BuildSpinnerOnItemSelectedListener();
     mStarListener = new StarViewOnClickListener();
@@ -302,7 +304,7 @@ public class ConfigureFragment extends AnalyticsFragment implements PartGroupCho
         launchAdjustActivity();
       } else {
         Log.d(TAG, "parent.getItemAtPosition(position): " + parent.getItemAtPosition(position));
-        mConfigureModel.setPlayerConfiguration(StarredBuildUtils.getKartConfigurationFromKey(
+        mConfigureModel.setKartConfiguration(StarredBuildUtils.getKartConfigurationFromKey(
             (String) parent.getItemAtPosition(position)));
         if (position != mConfigureSpinnerAdapter.getLastPosition()) {
           updateStar();

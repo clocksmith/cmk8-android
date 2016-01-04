@@ -9,8 +9,8 @@ android {
         applicationId "com.blunka.mk8assistant"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 22
-        versionName "1.2"
+        versionCode 25
+        versionName "1.23"
     }
 
     compileOptions {
@@ -31,7 +31,6 @@ repositories {
 }
 
 dependencies {
-    compile 'com.google.android.gms:play-services:7.5.0'
     compile 'com.google.android.gms:play-services-analytics:7.5.0'
 
     compile fileTree(dir: 'libs', include: ['*.jar'])

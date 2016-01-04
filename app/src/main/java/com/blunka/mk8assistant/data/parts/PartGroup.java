@@ -3,9 +3,9 @@ package com.blunka.mk8assistant.data.parts;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.Log;
 
 import com.blunka.mk8assistant.data.Stats;
+import com.google.common.collect.ComparisonChain;
 import com.google.common.collect.Lists;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by clocksmith on 8/8/14.
  */
-public class PartGroup implements Parcelable {
+public class PartGroup implements Parcelable, Comparable<PartGroup> {
   private static final String TAG = PartGroup.class.getSimpleName();
 
   private String mName;
@@ -92,5 +92,14 @@ public class PartGroup implements Parcelable {
   @Override
   public int describeContents() {
     return 0;
+  }
+
+  @Override
+  public int compareTo(PartGroup otherPartGroup) {
+    if (this.getPartType() == PartType.CHARACTER) {
+      return this.getIndex() - otherPartGroup.getIndex();
+    } else {
+      return ComparisonChain.start().compare(this.getName(), otherPartGroup.getName()).result();
+    }
   }
 }

@@ -24,7 +24,7 @@ public class ConfigureModel implements Parcelable, Model {
     return mKartConfiguration;
   }
 
-  public void setPlayerConfiguration(KartConfiguration kartConfiguration) {
+  public void setKartConfiguration(KartConfiguration kartConfiguration) {
     mKartConfiguration = kartConfiguration;
   }
 

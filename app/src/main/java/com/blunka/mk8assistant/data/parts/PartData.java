@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.blunka.mk8assistant.data.JsonUtils;
 import com.blunka.mk8assistant.data.Stats;
+import com.blunka.mk8assistant.shared.FilteredLogger;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -12,9 +13,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Created by clocksmith on 8/16/15.
@@ -22,13 +23,13 @@ import java.util.TreeMap;
 public class PartData {
   private static final String TAG = PartData.class.getSimpleName();
 
-  public static final Map<PartType, TreeMap<String, PartGroup>> PART_TYPE_TO_PART_GROUPS_MAP = Maps.newHashMap();
+  public static final Map<PartType, LinkedHashMap<String, PartGroup>> PART_TYPE_TO_PART_GROUPS_MAP = Maps.newHashMap();
   public static final Map<String, PartGroup> PART_NAME_TO_PART_GROUP_MAP = Maps.newHashMap();
 
-  public static final TreeMap<String, PartGroup> CHARACTER_GROUPS = Maps.newTreeMap();
-  public static final TreeMap<String, PartGroup> VEHICLE_GROUPS = Maps.newTreeMap();
-  public static final TreeMap<String, PartGroup> TIRE_GROUPS = Maps.newTreeMap();
-  public static final TreeMap<String, PartGroup> GLIDER_GROUPS = Maps.newTreeMap();
+  public static final LinkedHashMap<String, PartGroup> CHARACTER_GROUPS = Maps.newLinkedHashMap();
+  public static final LinkedHashMap<String, PartGroup> VEHICLE_GROUPS = Maps.newLinkedHashMap();
+  public static final LinkedHashMap<String, PartGroup> TIRE_GROUPS = Maps.newLinkedHashMap();
+  public static final LinkedHashMap<String, PartGroup> GLIDER_GROUPS = Maps.newLinkedHashMap();
 
   public static void init(Context context) throws JSONException {
     Log.d(TAG, "init");
@@ -37,6 +38,8 @@ public class PartData {
     initPartGroupList(context, partsObj.getJSONArray("vehicle_groups"), VEHICLE_GROUPS, PartType.VEHICLE);
     initPartGroupList(context, partsObj.getJSONArray("tire_groups"), TIRE_GROUPS, PartType.TIRE);
     initPartGroupList(context, partsObj.getJSONArray("glider_groups"), GLIDER_GROUPS, PartType.GLIDER);
+
+    FilteredLogger.d(TAG, "CHARACTER_GROUPS: " + CHARACTER_GROUPS.toString());
   }
 
   public static PartGroup getPartGroup(Part part) {
@@ -51,7 +54,7 @@ public class PartData {
   private static void initPartGroupList(
       Context context,
       JSONArray in,
-      TreeMap<String, PartGroup> out,
+      LinkedHashMap<String, PartGroup> out,
       PartType partType) throws JSONException {
     Log.d(TAG, "initPartGroupList: " + partType.name());
 
@@ -69,10 +72,10 @@ public class PartData {
       }
 
       JSONObject statsJsonObj = partGroupJsonObj.getJSONObject("stats");
-      String partName = partGroupJsonObj.getString("name");
+      String partGroupName = partGroupJsonObj.getString("name");
       PartGroup partGroup = new PartGroup(
           context,
-          partName,
+          partGroupName,
           Stats.newBuilder()
               .withAcceleration(statsJsonObj.getDouble("acceleration"))
               .withGroundSpeed(statsJsonObj.getDouble("ground_speed"))
@@ -91,7 +94,7 @@ public class PartData {
           partType,
           i);
 
-      out.put(partName, partGroup);
+      out.put(partGroupName, partGroup);
 
       for (Part part : partGroup.getParts()) {
         PART_NAME_TO_PART_GROUP_MAP.put(part.getName(), partGroup);

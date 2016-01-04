@@ -5,6 +5,8 @@ import android.os.Parcelable;
 
 import com.blunka.mk8assistant.data.parts.PartData;
 import com.blunka.mk8assistant.data.parts.PartGroup;
+import com.blunka.mk8assistant.data.parts.PartType;
+import com.google.common.collect.ComparisonChain;
 import com.google.common.collect.ImmutableList;
 
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
 /**
  * Created by clocksmith on 7/6/14.
  */
-public class KartConfiguration implements Parcelable {
+public class KartConfiguration implements Parcelable, Comparable<KartConfiguration> {
   private static final String TAG = KartConfiguration.class.getSimpleName();
 
   private PartGroup mCharacterGroup;
@@ -21,10 +23,10 @@ public class KartConfiguration implements Parcelable {
   private PartGroup mGliderGroup;
 
   public KartConfiguration() {
-    this(PartData.CHARACTER_GROUPS.get(0),
-        PartData.VEHICLE_GROUPS.get(0),
-        PartData.TIRE_GROUPS.get(0),
-        PartData.GLIDER_GROUPS.get(0));
+    this(PartData.CHARACTER_GROUPS.entrySet().iterator().next().getValue(),
+        PartData.VEHICLE_GROUPS.entrySet().iterator().next().getValue(),
+        PartData.TIRE_GROUPS.entrySet().iterator().next().getValue(),
+        PartData.GLIDER_GROUPS.entrySet().iterator().next().getValue());
   }
 
   public KartConfiguration(PartGroup characterGroup,
@@ -173,4 +175,14 @@ public class KartConfiguration implements Parcelable {
           return new KartConfiguration[size];
         }
       };
+
+  @Override
+  public int compareTo(KartConfiguration that) {
+    return ComparisonChain.start()
+        .compare(this.getCharacterGroup(), that.getCharacterGroup())
+        .compare(this.getVehicleGroup(), that.getVehicleGroup())
+        .compare(this.getTireGroup(), that.getTireGroup())
+        .compare(this.getGliderGroup(), that.getGliderGroup())
+        .result();
+  }
 }

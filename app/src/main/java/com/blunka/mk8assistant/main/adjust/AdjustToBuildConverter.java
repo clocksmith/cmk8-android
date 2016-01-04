@@ -8,6 +8,7 @@ import com.blunka.mk8assistant.data.Attribute;
 import com.blunka.mk8assistant.data.KartConfiguration;
 import com.blunka.mk8assistant.data.Stats;
 import com.blunka.mk8assistant.main.configure.ConfigureModel;
+import com.blunka.mk8assistant.shared.FilteredLogger;
 import com.blunka.mk8assistant.shared.Flags;
 import com.blunka.mk8assistant.shared.preferences.StarredBuildUtils;
 import com.google.common.collect.Lists;
@@ -36,7 +37,7 @@ public class AdjustToBuildConverter {
       kartConfiguration = new KartConfiguration();
     }
     ConfigureModel configureModel = new ConfigureModel();
-    configureModel.setPlayerConfiguration(kartConfiguration);
+    configureModel.setKartConfiguration(kartConfiguration);
     return configureModel;
   }
 
@@ -46,7 +47,6 @@ public class AdjustToBuildConverter {
     float maxScore = 0;
     for (KartConfiguration kartConfiguration : mAllKartConfigurations.getKartConfigurations()) {
       float score = calculateScore(adjustConfiguration, kartConfiguration);
-      Log.d(TAG, "" + score);
       if (score > maxScore) {
         maxScore = score;
         optimalKartConfiguration = kartConfiguration;
@@ -78,7 +78,7 @@ public class AdjustToBuildConverter {
   }
 
   public void runTest() {
-    Log.d(TAG, "Starting test...");
+    FilteredLogger.d(TAG, "Starting test...");
     Map<String, List<String>> items = Maps.newHashMap();
     AdjustConfiguration config = new AdjustModel().getCustomConfiguration();
     float interval = 100f / (Flags.NUM_TEST_INTERVALS - 1);
